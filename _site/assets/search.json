@@ -1,0 +1,66 @@
+[
+  
+    {
+      "title"    : "Software Developer @ UPCH",
+      "tags"     : "",
+      "url"      : "/upch-software-developer/",
+      "date"     : "2020-09-14 21:45:47 -0500"
+    } ,
+  
+    {
+      "title"    : "Cara ribet memperbarui forked repo",
+      "tags"     : "tips, git, software",
+      "url"      : "/cara-memperbarui-fork-repository/",
+      "date"     : "2020-01-28 13:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "What is a shell? 🐚 adalah kerang ajaib?",
+      "tags"     : "unix/linux, cli",
+      "url"      : "/apa-itu-shell/",
+      "date"     : "2020-01-24 23:58:47 -0500"
+    } ,
+  
+    {
+      "title"    : "Tech Leader @ BBVA",
+      "tags"     : "",
+      "url"      : "/tech-leader-at-bbva/",
+      "date"     : "2020-01-01 21:45:47 -0500"
+    } ,
+  
+    {
+      "title"    : "Mobile Channels Specialist @ BBVA",
+      "tags"     : "",
+      "url"      : "/mobile-specialist-at-bbva/",
+      "date"     : "2018-07-01 21:45:47 -0500"
+    } ,
+  
+    {
+      "title"    : "React Component with Dot Notation",
+      "tags"     : "javascript, react",
+      "url"      : "/react-component-with-dot-notation/",
+      "date"     : "2018-04-07 11:04:00 -0500"
+    } ,
+  
+    {
+      "title"    : "CTO &amp; Founder @ Prllel",
+      "tags"     : "",
+      "url"      : "/prllel-founder/",
+      "date"     : "2017-04-13 22:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Frontend Developer @ Bombo",
+      "tags"     : "",
+      "url"      : "/frontend-developer/",
+      "date"     : "2017-02-28 21:29:20 -0500"
+    } ,
+  
+    {
+      "title"    : "Software Developer @ Voz3D",
+      "tags"     : "",
+      "url"      : "/voz3d-developer/",
+      "date"     : "2017-01-01 21:45:47 -0500"
+    } 
+  
+]
