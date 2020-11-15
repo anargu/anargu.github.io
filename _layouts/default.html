@@ -28,10 +28,13 @@ layout: compress
 
   {% include navbar.html %}
   <div class="wrapper">
-    {% include author.html %}
-    <main aria-label="Content">
-      {{ content }}
-    </main>
+
+    <div class="grid grid-auto-2-col">
+      <main aria-label="Content">{{ content }}</main>
+      
+      {% include author.html %}
+    </div> 
+    
     {% include footer.html %}
   </div>
 </body>

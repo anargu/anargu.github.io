@@ -1,0 +1,11 @@
+I"P<figure class="video_container" align="left" style="
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    float: right;">
+  <video controls="true" allowfullscreen="true" width="200px" height="300px">
+    <source src="/projects/bembar/bembar_demo_1.mp4" type="video/mp4" />
+  </video>
+</figure>
+:ET

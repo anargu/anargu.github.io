@@ -1,0 +1,6 @@
+I"Â<figure class="video_container">
+  <video controls="true" allowfullscreen="true" align="left" width="150px">
+    <source src="/projects/prllel/demo.mp4" type="video/mp4" />
+  </video>
+</figure>
+:ET

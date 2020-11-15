@@ -78,7 +78,7 @@ body[data-theme="dark"] {
 
     time {
       &::after {
-        background-color: $dark-light;
+        background-color: none;
       }
     }
 

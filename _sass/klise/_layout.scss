@@ -76,9 +76,10 @@
     color: $black;
     line-height: $base-line-height + 0.4;
     text-decoration: none;
-    padding: 5px 8px;
+    padding: 5px 12px;
     opacity: 0.7;
     letter-spacing: 0.3px;
+    text-transform: uppercase;
 
     &:hover {
       opacity: 1;
@@ -221,6 +222,121 @@
   font-weight: 700;
   margin-bottom: 5px;
   color: $black;
+}
+
+// List of projects
+.project-item {
+  //display: flex;
+  //padding-top: 5px;
+  //padding-bottom: 6px;
+  @extend %clearfix;
+
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+
+  //
+  //&:not(:first-child) {
+  //  border-top: 1px solid $light;
+  //}
+
+  .project-item-date {
+    min-width: 96px;
+    color: $black;
+    font-weight: 700;
+    padding-right: 10px;
+
+    @include media-query($on-mobile) {
+      font-size: 16px;
+    }
+  }
+
+  .project-item-title {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-size: $base-font-size;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+
+    a {
+      color: $text-base-color;
+
+      &:hover,
+      &focus {
+        color: $black;
+      }
+    }
+  }
+
+  .project-portrait {
+    position: relative;
+    height: 100%;
+
+    img {
+      height: 100%;
+      max-width: none; 
+      max-height: 100%;
+    }
+  }
+  .project-video {
+    top: -50px;
+    position: relative;
+  }
+
+  .image-overlay,
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $dark-black-33-opacity;
+    z-index: 2;
+    
+    width: 100%;
+    height: 100%;
+  }
+
+  video {
+    width: 100%;
+    z-index: 1;
+  }
+
+  & .project-label-group {
+    //display: none;// inline-block;
+    // visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+
+    text-align: center;
+    background: $dark-black-66-opacity;
+    transition: all .2s ease;
+
+    opacity: 0.0;
+  }
+
+  
+  & .project-label-inner-content {
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
+  &:hover .project-label-group {
+    // display: inline-block;
+    // visibility: visible;
+    opacity: 1.0;
+  }
+}
+
+.project-label-inner-content span.project-item-date,
+.project-label-inner-content a {
+  color: $light !important;
 }
 
 // List of posts
@@ -377,4 +493,23 @@
     border: 1px solid rgba(128, 128, 128, 0.1);
     background-color: rgba(128, 128, 128, 0.1);
   }
+}
+
+// projects
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-template-rows: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+.project-card-item {
+  position: relative;
+}
+.project-card-item-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $dark-black-66-opacity;
+  padding: 12px 12px 12px 24px !important;
 }

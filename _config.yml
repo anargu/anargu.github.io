@@ -10,14 +10,13 @@ mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
-  name: Anthony Aróstegui Guillén # author name
+  name: Anthony Aróstegui # author name
   bio: >- # tell to the world
-    Industrial engineer / Self taught software developer.
-    Founder of Prllel.co
+    Industrial engineer / Software developer / AR/VR developer / AI and ML enthusiast. 
   username: username # general username
   github: anargu # github username
-  twitter: twitter_username # twitter username
-  facebook: facebook_username # facebook username
+  twitter: anargu101 # twitter username
+  #facebook: facebook_username # facebook username
   email: anthony.arostegui@email.com # email adress
   avatar: /assets/img/anargu.jpg # change with your own avatar
 
@@ -32,6 +31,11 @@ fb_appid:
 collections:
   posts:
     output: true
+  projects:
+    output: true
+    order:
+      - prllel/prllel.md
+      - calcul_ar/calcul_ar.md
 
 # Markdown settings
 markdown: kramdown
@@ -59,7 +63,8 @@ jekyll_compose:
     description:
 
 # Homepage limit posts
-number_of_posts: 5
+number_of_posts: 3
+number_of_projects: 2
 
 # Build settings
 # theme: klise
