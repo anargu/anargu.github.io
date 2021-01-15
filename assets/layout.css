@@ -15,7 +15,7 @@ html {
 }
 @media screen and (min-width: 1500px) {
   .page-wrapper {
-    margin: 100px leftMarginDesktopXL 0;
+    margin: 0 leftMarginDesktopXL 0;
   }
 }
 .y-centered-page-wrapper {
