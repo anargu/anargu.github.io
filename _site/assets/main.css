@@ -542,9 +542,10 @@ body[data-theme="dark"] * {
 * {
   font-family: 'Raleway', sans-serif;
 }
-body,
-html {
+html,
+body {
   margin: 0;
+  height: 100%;
 }
 .page-wrapper {
   margin: 0rem 60px 0 1.5rem;
@@ -561,20 +562,20 @@ html {
 }
 .y-centered-page-wrapper {
   margin: 0rem 60px 0 1.5rem;
-  height: calc(100vh - 64px);
+  height: calc(100% - 64px);
   display: grid;
   grid-template-columns: auto;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .y-centered-page-wrapper {
-    height: calc(100vh - 96px);
+    height: calc(100% - 96px);
     margin: 0rem 100px;
   }
 }
 @media screen and (min-width: 1500px) {
   .y-centered-page-wrapper {
-    height: calc(100vh - 128px);
+    height: calc(100% - 128px);
   }
 }
 .content-page-wrapper {

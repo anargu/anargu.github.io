@@ -1,9 +1,10 @@
 * {
   font-family: defaultFont;
 }
-body,
-html {
+html,
+body {
   margin: 0;
+  height: 100%;
 }
 .page-wrapper {
   margin: 0rem leftBarThickness 0 1.5rem;
@@ -20,20 +21,20 @@ html {
 }
 .y-centered-page-wrapper {
   margin: 0rem leftBarThickness 0 1.5rem;
-  height: calc(100vh - navbarHeightS);
+  height: calc(100% - navbarHeightS);
   display: grid;
   grid-template-columns: auto;
   align-items: center;
 }
 @media screen and (min-width: breakpointWidthM) {
   .y-centered-page-wrapper {
-    height: calc(100vh - navbarHeightM);
+    height: calc(100% - navbarHeightM);
     margin: 0rem leftMarginDesktop;
   }
 }
 @media screen and (min-width: breakpointWidthL) {
   .y-centered-page-wrapper {
-    height: calc(100vh - navbarHeightL);
+    height: calc(100% - navbarHeightL);
   }
 }
 .content-page-wrapper {
