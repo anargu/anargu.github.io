@@ -1,0 +1,12 @@
+name: Prllel
+start_date: 2017-01-01 00:00:00 -05:00
+#end_date: 2017-04-14 00:00:00 -05:00
+tags:
+  - project
+description: "Prllel: Augmented Reality Social Platform for sharing stories in real places."
+portrait_image: image
+video: "/projects/prllel/demo.mp4"
+images:
+  - /projects/prllel/portrait_1.jpg
+  - /projects/prllel/demo_2.jpg
+  

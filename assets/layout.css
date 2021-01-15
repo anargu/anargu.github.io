@@ -1,0 +1,95 @@
+* {
+  font-family: defaultFont;
+}
+body,
+html {
+  margin: 0;
+}
+.page-wrapper {
+  margin: 0rem leftBarThickness 0 1.5rem;
+}
+@media screen and (min-width: 900px) {
+  .page-wrapper {
+    margin: 0rem leftMarginDesktop 0;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .page-wrapper {
+    margin: 100px leftMarginDesktopXL 0;
+  }
+}
+.y-centered-page-wrapper {
+  margin: 0rem leftBarThickness 0 1.5rem;
+  height: calc(100vh - navbarHeightS);
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+}
+@media screen and (min-width: breakpointWidthM) {
+  .y-centered-page-wrapper {
+    height: calc(100vh - navbarHeightM);
+    margin: 0rem leftMarginDesktop;
+  }
+}
+@media screen and (min-width: breakpointWidthL) {
+  .y-centered-page-wrapper {
+    height: calc(100vh - navbarHeightL);
+  }
+}
+.content-page-wrapper {
+  margin: 2rem 4.8rem 0 1rem;
+  padding-bottom: 6rem;
+}
+@media screen and (min-width: 768px) {
+  .content-page-wrapper {
+    margin: 100px auto 0;
+    width: 660px;
+  }
+}
+.content-page img {
+  width: 100%;
+}
+.card-a img {
+  width: 172px;
+  height: 344px;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 900px) {
+  .card-a img {
+    width: 250px;
+    height: 512px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 699px) {
+  .card-a img {
+    width: 250px;
+    height: 375px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 899px) {
+  .card-a img {
+    width: 400px;
+    height: 600px;
+  }
+}
+.card-empty {
+  min-width: 24px;
+  height: 344px;
+}
+.card-a {
+  margin: 0 1rem;
+}
+.card-a:first-child {
+  margin: 0 1rem 0 0;
+}
+.card-a:last-child {
+  margin: 0 6rem 0 1rem;
+}
+.list-flex-x {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
