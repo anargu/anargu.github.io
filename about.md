@@ -1,7 +1,7 @@
 ---
 title: About me
 permalink: /about/
-layout: page
+layout: about.html
 excerpt: WIP
 comments: false
 ---
@@ -35,3 +35,4 @@ Deep Learning Specialization, 2020
 
 - {{ site.author.email }}
 - github.com/{{ site.author.github }}
+

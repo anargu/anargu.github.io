@@ -1,0 +1,129 @@
+
+breakpointWidthM = 768px
+breakpointWidthL = 1500px
+
+navbarHeightS = 64px
+navbarHeightM = 96px
+navbarHeightL = 128px
+
+
+*
+	font-family defaultFont
+	-webkit-font-smoothing antialiased
+body
+	*
+		color darkColor
+	a
+		text-decoration none
+		outline none
+		color darkColor
+	h1
+		font-family displayFont
+		font-size 4rem
+		font-weight normal
+		margin-top 0rem
+		-webkit-font-smoothing antialiased
+		@media screen and (min-width: 900px)
+			line-height 1.2
+			font-size 9rem
+			margin-bottom 1.2rem
+		@media screen and (min-width: 1500px)
+			margin-bottom 3rem
+			font-size 12rem
+	p
+		font-size 1rem
+		line-height 1.5
+		
+body[data-theme="dark"]
+	background darkColor
+	*
+		color lightColor
+
+
+::-webkit-scrollbar-track
+	background-color: #111115;
+::-webkit-scrollbar
+	height: 8px;
+	width: 8px;
+	background-color: #00000000;
+::-webkit-scrollbar-thumb
+	background-color: #333333;
+
+
+spacing = {
+	p: padding
+	m: margin
+}
+
+for k, v in spacing
+	for i in 1 2 3 4 5 10 20 30 40
+		.{k}-{i}
+			{v} 0.2rem * i
+		.{k}l-{i}
+			{v}-left 0.2rem * i
+		.{k}r-{i}
+			{v}-right 0.2rem * i
+		.{k}x-{i}
+			{v}-left 0.2rem * i
+			{v}-right 0.2rem * i
+		.{k}b-{i}
+			{v}-bottom 0.2rem * i
+		.{k}t-{i}
+			{v}-top 0.2rem * i
+		.{k}y-{i}
+			{v}-top 0.2rem * i
+			{v}-bottom 0.2rem * i
+
+
+#home p
+	@media screen and (min-width: 900px)
+		font-size 1.5rem
+		max-width 60%
+	@media screen and (min-width: 1500px)
+		font-size 2rem
+		max-width 50%
+
+.--right
+	text-align right
+.--left
+	text-align left
+.caption
+	.title,
+	.title a
+		font-family displayFont
+		font-size _fontSize(1)
+		margin 0.2rem 0
+		@media screen and (min-width: 900px)
+			font-size _fontSize(2.2)
+	.subtitle
+		font-family defaultFont
+		font-size _fontSize(1)
+		margin 0.2rem 0
+		@media screen and (min-width: 900px)
+			font-size _fontSize(1.5)
+
+	
+.author-header h2
+	font-family displayFont
+	font-size 3rem
+	font-weight normal
+	// margin-top 0rem
+	@media screen and (min-width: 768px)
+		// line-height 1.2
+		font-size 6rem
+		// margin-bottom 1.2rem
+	@media screen and (min-width: 1500px)
+		// margin-bottom 3rem
+		font-size 8rem
+
+.is-svg-24x24 svg
+	width 24px
+	height 24px
+	@media screen and (min-width: 768px)
+		width 48px
+		height 48px
+	@media screen and (min-width: 1500px)
+		width 48px
+		height 48px
+.inline-vertical-center span
+	vertical-align middle

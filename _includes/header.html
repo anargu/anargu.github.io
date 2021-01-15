@@ -1,7 +1,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />	
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="application-name" content="{{ site.title }}" />
@@ -11,8 +11,9 @@
     {% if page.title %}{{ page.title | escape }} - {{ site.title }}{% else %}{{
     site.title | escape }}{% endif %}
   </title>
+	
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
   <link
     rel="alternate"
     href="{{
@@ -133,11 +134,11 @@
   <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
   {% else %}
   <meta name="twitter:image" content="{{ site.image | absolute_url }}" />
-  {% endif %} {% feed_meta %}
+  {% endif %}
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="/assets/favicons/apple-touch-icon.png"
+    href="/assets/favicons/apple-icon-180x180.png"
   />
   <link
     rel="icon"
@@ -155,12 +156,15 @@
   <link
     rel="mask-icon"
     href="/assets/favicons/safari-pinned-tab.svg"
-    color="#5bbad5"
+    color="#1B1D25"
   />
-  <meta name="apple-mobile-web-app-title" content="Jekyll Klise" />
-  <meta name="application-name" content="Jekyll Klise" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#2c2c2c" />
+  <meta name="apple-mobile-web-app-title" content="anargu" />
+  <meta name="application-name" content="anargu" />
+  <meta name="msapplication-TileColor" content="#1B1D25" />
+  <meta name="theme-color" content="#1B1D25" />
 
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/minimalism.css" />
+  <link rel="stylesheet" href="/assets/main.css" />
 </head>
+
+

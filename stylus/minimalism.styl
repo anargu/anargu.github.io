@@ -1,0 +1,142 @@
+@import "theme.styl"
+
+.fullscreen-loading
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	z-index 99
+	background-color darkColor
+
+
+.loading-element
+	position: absolute;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	cursor: default;
+	pointer-events: none;
+span
+	font-family displayFont
+.fullscreen-loading .loading-element:first-child
+	top: 0;
+	height: 100%;
+	-webkit-transform: translate3d(0, 25%, 0);
+	transform: translate3d(0, 25%, 0);
+.fullscreen-loading .loading-element:nth-child(2)
+	bottom: 20%
+
+
+.loading-element
+	position: absolute
+	left: 0
+	width: 100%
+	opacity: 0
+	cursor: default
+	pointer-events: none
+
+
+.loading-element:first-child
+	top: 0
+	height: 100%
+	-webkit-transform: translate3d(0,25%,0)
+	transform: translate3d(0,25%,0)
+	font-size 144px
+
+
+.loading-element:nth-child(2)
+	bottom: 20%
+	font-size 72px
+
+.loading-element
+	text-align center
+
+/* Animations */
+
+/* Initial animation of header elements */
+durationIn = 1s
+// .loading
+//   -webkit-animation: animInitialContainer durationIn cubic-bezier(0.7,0,0.3,1) both
+//   animation: animInitialContainer durationIn cubic-bezier(0.7,0,0.3,1) both
+
+.loading .loading-element
+	opacity: 1
+	-webkit-animation: animInitialHeader durationIn cubic-bezier(0.7,0,0.3,1) both
+	animation: animInitialHeader durationIn cubic-bezier(0.7,0,0.3,1) both
+
+.loading .loading-element:nth-child(2)
+	-webkit-animation-delay: 0.2s
+	animation-delay: 0.2s
+
+@keyframes animInitialContainer
+	from
+		-webkit-transform: translate3d(0,3800px,0)
+		transform: translate3d(0,3800px,0)
+		
+@keyframes animLoadedContainer
+	to
+		-webkit-transform: translate3d(0,-3800px,0)
+		transform: translate3d(0,-3800px,0)
+
+@keyframes animInitialHeader
+	from
+		opacity: 0
+		-webkit-transform: translate3d(0,3800px,0)
+		transform: translate3d(0,3800px,0)
+
+@keyframes animLoadedHeader
+	to
+		opacity: 0
+		-webkit-transform: translate3d(0,-1800px,0)
+		transform: translate3d(0,-1800px,0)
+
+/* Header elements when loading finishes */
+.loaded
+	-webkit-animation: animLoadedContainer 1s cubic-bezier(0.7,0,0.3,1) both
+	animation: animLoadedContainer 1s cubic-bezier(0.7,0,0.3,1) both
+
+.loaded .loading-element
+	opacity: 1
+	-webkit-transform-origin: 50% 0
+	transform-origin: 50% 0
+	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards
+	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards
+
+.loaded .loading-element:nth-child(2)
+	-webkit-animation-delay: 0.2s
+	animation-delay: 0.2s
+
+// .loaded .loading-element:first-child
+//   -webkit-transform-origin: 50% 0
+//   transform-origin: 50% 0
+//   -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards
+//   animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards
+// 
+// @keyframes animLoadedLogo
+//   to
+//     -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1)
+//     transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1)
+// 
+// .loaded .loading-element:nth-child(2)
+//   -webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards
+//   animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards
+// 
+// @keyframes animLoadedLoader
+//   to
+//     opacity: 0
+//     -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1)
+//     transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1)
+// 
+
+/* Header animation when loading finishes */
+// .loaded .fullscreen-loading
+//   -webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards
+//   animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards
+// 
+// @keyframes animLoadedHeader
+//   to
+//     -webkit-transform: translate3d(0,-100%,0)
+//     transform: translate3d(0,-100%,0)
+// 
+

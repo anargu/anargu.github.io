@@ -1,0 +1,82 @@
+
+*
+	font-family defaultFont
+body, html
+	margin 0
+.page-wrapper
+	margin 0rem leftBarThickness 0 1.5rem
+	@media screen and (min-width: 900px)
+		margin 0rem leftMarginDesktop 0
+	@media screen and (min-width: 1500px)
+		margin 100px leftMarginDesktopXL 0
+	// @media screen and (max-width: 600px)
+	//   margin 4.5rem 4rem 0 1.5rem
+.y-centered-page-wrapper
+	margin 0rem leftBarThickness 0 1.5rem
+	height "calc(100vh - %s)" % navbarHeightS
+	display grid
+	grid-template-columns auto
+	align-items center
+	@media screen and (min-width: breakpointWidthM)
+		height "calc(100vh - %s)" % navbarHeightM
+		margin 0rem leftMarginDesktop
+	@media screen and (min-width: breakpointWidthL)
+		height "calc(100vh - %s)" % navbarHeightL
+
+.content-page-wrapper
+	margin 2rem 4.8rem 0 1rem
+	padding-bottom 6rem
+	@media screen and (min-width: 768px)
+		margin 100px auto 0
+		width 660px
+.content-page
+	img
+		width 100%
+
+CardAImageWidth = 172px
+CardAImageHeight = 2 * CardAImageWidth
+CardAImageWidthDesktop = 250px
+CardAImageHeightDesktop = 512px
+CardAImageWidthDesktop2x = 400px
+.card-a img
+	 width CardAImageWidth
+	height CardAImageHeight
+	object-fit cover
+	object-position center
+	@media screen and (min-width: 900px)
+		width CardAImageWidthDesktop
+		height CardAImageHeightDesktop
+	@media screen and (min-width: 900px) and (min-height: 699px)
+		width CardAImageWidthDesktop
+		height CardAImageWidthDesktop * 1.5
+	@media screen and (min-width: 900px) and (min-height: 899px)
+		width CardAImageWidthDesktop2x
+		height CardAImageWidthDesktop2x * 1.5
+
+.card-empty
+	min-width 24px
+	height CardAImageHeight
+
+.card-a	
+	margin: 0 1rem
+.card-a:first-child	
+	margin: 0 1rem 0 0
+.card-a:last-child	
+	margin 0 6rem 0 1rem
+	
+
+.list-flex
+	&-x
+		display flex
+		flex-wrap nowrap
+		width 100%
+		overflow-x auto
+		padding-bottom 1rem
+
+// #projects
+//   margin-top 3rem
+//   @media screen and (min-width: 374px)
+//     margin-top 3rem
+//   @media screen and (min-width: 1500px)
+//     margin-top 8rem
+

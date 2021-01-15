@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include header.html %}
+
+<body data-theme="{{ site.mode }}" class="notransition" data-scroll-container>
+	<div id="loading-el" class="fullscreen-loading">
+		<div class="loading-element">
+			<span id="fl-first-line" class="ip-inner">Hi,</span>
+		</div>
+		<div class="loading-element">
+			<span id="fl-second-line" class="ip-inner">Nice to meet you</span>
+		</div>
+	</div>
+	<script>
+		const fl = document.querySelector('#loading-el');
+		const alreadyVisitedKey = 'alreadyVisited';
+		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
+
+
+		const firstLineGet = () => document.querySelector('#fl-first-line')
+		const secondLineGet = () => document.querySelector('#fl-second-line')
+		if (!alreadyVisited) {
+			window.localStorage.setItem(alreadyVisitedKey, 'true')
+			firstLineGet().innerHTML = 'Hi!'
+			secondLineGet().innerHTML = 'Welcome'
+
+		} else {
+			firstLineGet().innerHTML = ''
+			secondLineGet().innerHTML = 'Just a second...'
+		}
+		fl.classList.add('loading')
+		window.onload = () => {
+			fl.classList.remove('loading')
+			fl.classList.add('loaded')
+		}
+	</script>
+	{% include navbar.html %}
+	{{ content }}
+</body>
+
+</html>
