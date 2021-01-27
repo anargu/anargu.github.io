@@ -549,6 +549,8 @@ body {
 }
 .page-wrapper {
   margin: 0rem 60px 0 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 900px) {
   .page-wrapper {
@@ -560,8 +562,16 @@ body {
     margin: 0 200px 0;
   }
 }
+.background-decorator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
 .y-centered-page-wrapper {
-  margin: 0rem 60px 0 1.5rem;
+  margin: 0rem 0rem 0 1.5rem;
   height: calc(100% - 64px);
   display: grid;
   grid-template-columns: auto;
@@ -634,6 +644,10 @@ body {
   width: 100%;
   overflow-x: auto;
   padding-bottom: 1rem;
+}
+.navbar {
+  z-index: 3;
+  position: relative;
 }
 nav {
   height: 64px;
@@ -714,11 +728,20 @@ nav .bottom {
 }
 nav .right-bar {
   position: fixed;
-  top: 100vh;
-  right: 0;
-  transform: rotate(90deg);
-  transform-origin: 100% 0;
-  width: 100vh;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+@media screen and (min-width: 768px) {
+  nav .right-bar {
+    top: 100vh;
+    right: 0;
+    bottom: unset;
+    left: unset;
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+    width: 100vh;
+  }
 }
 nav .right-bar.elevated {
   background: #131418;
@@ -727,7 +750,7 @@ nav .right-bar.elevated {
 nav .right-bar > .inner-content {
   height: 60px;
   display: grid;
-  margin: 0 3rem 0 1rem;
+  margin: 0 0rem 0 0rem;
   grid-template-columns: 50% repeat(5, min-content);
 }
 @media screen and (min-width: 900px) {
@@ -739,7 +762,7 @@ nav .right-bar > .inner-content {
 }
 nav .inner-content > .inner-link {
   align-self: center;
-  text-align: right;
+  text-align: left;
   text-transform: uppercase;
   margin: 0 1.5rem;
   font-size: 1rem;
@@ -751,6 +774,7 @@ nav .inner-content > .inner-link {
 }
 @media screen and (min-width: 601px) {
   nav .inner-content > .inner-link {
+    text-align: right;
     font-size: 1.5rem;
   }
 }

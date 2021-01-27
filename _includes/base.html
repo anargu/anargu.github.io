@@ -15,6 +15,7 @@
 		const fl = document.querySelector('#loading-el');
 		const alreadyVisitedKey = 'alreadyVisited';
 		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
+		const LOADING_ANIMATION_DURATION = 2000
 
 
 		const firstLineGet = () => document.querySelector('#fl-first-line')
@@ -30,8 +31,10 @@
 		}
 		fl.classList.add('loading')
 		window.onload = () => {
+					setTimeout(() => {
 			fl.classList.remove('loading')
 			fl.classList.add('loaded')
+					}, LOADING_ANIMATION_DURATION)
 		}
 	</script>
 	{% include navbar.html %}

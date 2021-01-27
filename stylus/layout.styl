@@ -6,14 +6,25 @@ html,body
 	height 100%
 .page-wrapper
 	margin 0rem leftBarThickness 0 1.5rem
+	position relative
+	z-index 2
 	@media screen and (min-width: 900px)
 		margin 0rem leftMarginDesktop 0
 	@media screen and (min-width: 1500px)
 		margin 0 leftMarginDesktopXL 0
 	// @media screen and (max-width: 600px)
 	//   margin 4.5rem 4rem 0 1.5rem
+
+.background-decorator
+	position fixed
+	top 0
+	left 0
+	height 100%
+	width 100%
+	z-index 1
+
 .y-centered-page-wrapper
-	margin 0rem leftBarThickness 0 1.5rem
+	margin 0rem 0rem 0 1.5rem
 	height "calc(100% - %s)" % navbarHeightS
 	display grid
 	grid-template-columns auto
@@ -74,10 +85,4 @@ CardAImageWidthDesktop2x = 400px
 		overflow-x auto
 		padding-bottom 1rem
 
-// #projects
-//   margin-top 3rem
-//   @media screen and (min-width: 374px)
-//     margin-top 3rem
-//   @media screen and (min-width: 1500px)
-//     margin-top 8rem
 

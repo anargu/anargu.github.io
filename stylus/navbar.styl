@@ -1,6 +1,9 @@
 linksMarginAxisX = 0.5rem
 linksMarginAxisXdesktop = 2.5rem
 
+.navbar
+	z-index 3
+	position relative
 nav
 	height navbarHeightS
 	vertical-align middle
@@ -52,11 +55,17 @@ nav
 		bottom bottomMargin
 	.right-bar
 		position fixed
-		top 100vh
-		right 0
-		transform rotate(90deg)
-		transform-origin 100% 0
-		width 100vh
+		bottom 0
+		left 0
+		width 100vw
+		@media screen and (min-width: breakpointWidthM)
+			top 100vh
+			right 0
+			bottom unset
+			left unset
+			transform rotate(90deg)
+			transform-origin 100% 0
+			width 100vh
 	.right-bar.elevated
 		background darkColor
 		box-shadow:
@@ -69,7 +78,7 @@ nav
 	.right-bar > .inner-content
 		height leftBarThickness
 		display grid
-		margin 0 3.0rem 0 1rem
+		margin 0 0rem 0 0rem
 		grid-template-columns 50% repeat(5, min-content)
 		@media screen and (min-width: 900px)
 			margin 0 3.0rem 0 3rem
@@ -78,13 +87,14 @@ nav
 			grid-template-columns 1fr repeat(5, 64px)
 	.inner-content > .inner-link
 		align-self center
-		text-align right
+		text-align left
 		text-transform uppercase
 		margin 0 1.5rem
 		font-size fontSize
 		@media screen and (max-height: 400px)
 			margin 0 0
 		@media screen and (min-width: 601px)
+			text-align right
 			font-size _fontSize(1.5)
 		@media screen and (min-width: 900px)
 			text-align center

@@ -4,7 +4,7 @@
   position: top-left
 - url: '/projects/'
   title: 'Projects'
-  position: bottom
+  position: top-left
 - url: '/about/'
   title: 'About me'
   position: top-left
