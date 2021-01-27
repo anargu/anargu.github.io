@@ -1,10 +1,10 @@
 ---
 layout: base.html
 ---
-<div id="projects" class="y-centered-page-wrapper">
-	<div class="list-flex-x">
+<div id="projects" class="page-wrapper">
+	<div class="list-grid">
 		{% for post in collections.projects %}
-		<div class="card-a" >
+		<div class="card-b" >
 			<div class="portrait-image-container">
 				{% Image post.data.portrait_image, "project image" %}
 			</div>

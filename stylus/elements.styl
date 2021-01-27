@@ -1,0 +1,83 @@
+CardAImageWidth = 172px
+CardAImageHeight = 2 * CardAImageWidth
+CardAImageWidthDesktop = 250px
+CardAImageHeightDesktop = 512px
+CardAImageWidthDesktop2x = 400px
+
+.card-a img
+	width CardAImageWidth
+	height CardAImageHeight
+	object-fit cover
+	object-position center
+	@media screen and (min-width: 900px)
+		width CardAImageWidthDesktop
+		height CardAImageHeightDesktop
+	@media screen and (min-width: 900px) and (min-height: 699px)
+		width CardAImageWidthDesktop
+		height CardAImageWidthDesktop * 1.5
+	@media screen and (min-width: 900px) and (min-height: 899px)
+		width CardAImageWidthDesktop2x
+		height CardAImageWidthDesktop2x * 1.5
+.card-a
+	display inline-block
+	.caption,
+	.portrait-image-container
+		display inline-block
+
+@keyframes animHideCaption
+	to
+		transform: translate3d(0,-100%,0)
+@keyframes animShowCaption
+	from
+		transform: translate3d(0,-100%,0)
+.card-b
+	position relative
+	overflow hidden
+	display inline-block
+	.portrait-image-container,
+	.image-wrapper
+		display inline-block
+	.caption,
+	.caption.hover-out
+		// display none
+		animation animHideCaption 0.5s cubic-bezier(0.7,0,0.3,1) both
+	.caption.hover-in
+		animation animShowCaption 0.5s cubic-bezier(0.7,0,0.3,1) both
+	.caption
+		visibility visible
+		position absolute
+		width 100%
+		bottom 0
+		left 0
+		height 100%
+		background #15042dad
+		display flex
+		flex-direction column
+		justify-content center
+		text-align center
+		
+	img
+		object-fit cover
+		object-position center
+		// width CardAImageWidth
+		height CardAImageHeight * 0.3
+		@media screen and (min-width: breakpointWidthM)
+			height CardAImageHeight
+
+
+
+.card-empty
+	// disabling empty card
+	display none
+	min-width 24px
+	height CardAImageHeight
+
+.card-a	
+	margin: 0 1rem
+.card-a:first-child	
+	margin: 0 1rem 0 0
+.card-a:last-child	
+	margin 0 6rem 0 1rem
+.card-a	> .caption
+	display none
+	
