@@ -8,6 +8,8 @@ body {
 }
 .page-wrapper {
   margin: 0rem leftBarThickness 0 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 900px) {
   .page-wrapper {
@@ -19,8 +21,16 @@ body {
     margin: 0 leftMarginDesktopXL 0;
   }
 }
+.background-decorator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
 .y-centered-page-wrapper {
-  margin: 0rem leftBarThickness 0 1.5rem;
+  margin: 0rem 0rem 0 1.5rem;
   height: calc(100% - navbarHeightS);
   display: grid;
   grid-template-columns: auto;

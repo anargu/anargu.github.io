@@ -125,6 +125,7 @@
 		const fl = document.querySelector('#loading-el');
 		const alreadyVisitedKey = 'alreadyVisited';
 		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
+		const LOADING_ANIMATION_DURATION = 2000
 
 
 		const firstLineGet = () => document.querySelector('#fl-first-line')
@@ -140,8 +141,10 @@
 		}
 		fl.classList.add('loading')
 		window.onload = () => {
+					setTimeout(() => {
 			fl.classList.remove('loading')
 			fl.classList.add('loaded')
+					}, LOADING_ANIMATION_DURATION)
 		}
 	</script>
 	<script>
@@ -167,7 +170,7 @@
 	<nav class="menu"><a href="/"
 			class="menu-link top-left inactive">
 			@anargu
-		</a><a href="/projects/" class="menu-link  bottom 
+		</a><a href="/projects/" class="menu-link  top-left 
    ">
 			Projects
 		</a><a href="/about/"
@@ -205,10 +208,12 @@
 </div>
 
 	<div id="home">
+	<div class="background-decorator"><canvas id="c"></canvas></div>
+	<script src="/assets/js/gameOfLife.js"></script>
 	<div class="page-wrapper">
 		<h1>Anthony<br>Aróstegui</h1>
 		<p>Industrial engineer / Software developer / AR/VR developer / AI and ML enthusiast. </p>
-		<p><a href="mailto:anthony.arostegui@email.com">anthony.arostegui@email.com</a></p>
+		<p><a href="mailto:anthony.arostegui@gmail.com">anthony.arostegui@gmail.com</a></p>
 	</div>
 </div>
 

@@ -125,6 +125,7 @@
 		const fl = document.querySelector('#loading-el');
 		const alreadyVisitedKey = 'alreadyVisited';
 		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
+		const LOADING_ANIMATION_DURATION = 2000
 
 
 		const firstLineGet = () => document.querySelector('#fl-first-line')
@@ -140,8 +141,10 @@
 		}
 		fl.classList.add('loading')
 		window.onload = () => {
+					setTimeout(() => {
 			fl.classList.remove('loading')
 			fl.classList.add('loaded')
+					}, LOADING_ANIMATION_DURATION)
 		}
 	</script>
 	<script>
@@ -213,7 +216,10 @@
 				<h2>Anthony Aróstegui</h2>
 			</div>
 			<div class="py-4 is-svg-24x24">
-				<a href="assets/misc/AnthonyArostegui_vR_EN.pdf" download class="inline-vertical-center">
+				<a href="mailto:anthony.arostegui@gmail.com">anthony.arostegui@gmail.com</a>
+			</div>
+			<div class="py-4 is-svg-24x24">
+				<a href="/assets/misc/AnthonyArostegui_vR_EN.pdf" download class="inline-vertical-center">
 					<span>CV here:</span> <span><svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
 
 </span>
@@ -237,7 +243,7 @@
 <p>Deep Learning Specialization, 2020</p>
 <p><strong>Contact 📪</strong></p>
 <ul>
-<li>anthony.arostegui@email.com</li>
+<li>anthony.arostegui@gmail.com</li>
 <li>github.com/anargu</li>
 </ul>
 
