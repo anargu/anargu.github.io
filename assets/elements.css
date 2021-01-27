@@ -1,0 +1,127 @@
+.card-a img {
+  width: 172px;
+  height: 344px;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 900px) {
+  .card-a img {
+    width: 250px;
+    height: 512px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 699px) {
+  .card-a img {
+    width: 250px;
+    height: 375px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 899px) {
+  .card-a img {
+    width: 400px;
+    height: 600px;
+  }
+}
+.card-a {
+  display: inline-block;
+}
+.card-a .caption,
+.card-a .portrait-image-container {
+  display: inline-block;
+}
+.card-b {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.card-b .portrait-image-container,
+.card-b .image-wrapper {
+  display: inline-block;
+}
+.card-b .caption,
+.card-b .caption.hover-out {
+  animation: animHideCaption 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.card-b .caption.hover-in {
+  animation: animShowCaption 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.card-b .caption {
+  visibility: visible;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(21,4,45,0.678);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.card-b img {
+  object-fit: cover;
+  object-position: center;
+  height: 103.2px;
+}
+@media screen and (min-width: breakpointWidthM) {
+  .card-b img {
+    height: 344px;
+  }
+}
+.card-empty {
+  display: none;
+  min-width: 24px;
+  height: 344px;
+}
+.card-a {
+  margin: 0 1rem;
+}
+.card-a:first-child {
+  margin: 0 1rem 0 0;
+}
+.card-a:last-child {
+  margin: 0 6rem 0 1rem;
+}
+.card-a > .caption {
+  display: none;
+}
+@-moz-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-o-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-moz-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-o-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}

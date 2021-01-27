@@ -548,7 +548,7 @@ body {
   height: 100%;
 }
 .page-wrapper {
-  margin: 0rem 60px 0 1.5rem;
+  margin: 0rem 1.5rem 0 1.5rem;
   position: relative;
   z-index: 2;
 }
@@ -601,49 +601,19 @@ body {
 .content-page img {
   width: 100%;
 }
-.card-a img {
-  width: 172px;
-  height: 344px;
-  object-fit: cover;
-  object-position: center;
-}
-@media screen and (min-width: 900px) {
-  .card-a img {
-    width: 250px;
-    height: 512px;
-  }
-}
-@media screen and (min-width: 900px) and (min-height: 699px) {
-  .card-a img {
-    width: 250px;
-    height: 375px;
-  }
-}
-@media screen and (min-width: 900px) and (min-height: 899px) {
-  .card-a img {
-    width: 400px;
-    height: 600px;
-  }
-}
-.card-empty {
-  min-width: 24px;
-  height: 344px;
-}
-.card-a {
-  margin: 0 1rem;
-}
-.card-a:first-child {
-  margin: 0 1rem 0 0;
-}
-.card-a:last-child {
-  margin: 0 6rem 0 1rem;
-}
 .list-flex-x {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
   overflow-x: auto;
   padding-bottom: 1rem;
+}
+.list-grid {
+  margin-top: 2rem;
+  grid-gap: 1rem;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-flow: dense;
 }
 .navbar {
   z-index: 3;
@@ -804,4 +774,131 @@ nav .share-link svg {
 }
 body[data-theme="dark"] span.menu-icon > svg {
   fill: #eaeaea;
+}
+.card-a img {
+  width: 172px;
+  height: 344px;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 900px) {
+  .card-a img {
+    width: 250px;
+    height: 512px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 699px) {
+  .card-a img {
+    width: 250px;
+    height: 375px;
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 899px) {
+  .card-a img {
+    width: 400px;
+    height: 600px;
+  }
+}
+.card-a {
+  display: inline-block;
+}
+.card-a .caption,
+.card-a .portrait-image-container {
+  display: inline-block;
+}
+.card-b {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.card-b .portrait-image-container,
+.card-b .image-wrapper {
+  display: inline-block;
+}
+.card-b .caption,
+.card-b .caption.hover-out {
+  animation: animHideCaption 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.card-b .caption.hover-in {
+  animation: animShowCaption 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.card-b .caption {
+  visibility: visible;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(21,4,45,0.678);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.card-b img {
+  object-fit: cover;
+  object-position: center;
+  height: 103.2px;
+}
+@media screen and (min-width: 768px) {
+  .card-b img {
+    height: 344px;
+  }
+}
+.card-empty {
+  display: none;
+  min-width: 24px;
+  height: 344px;
+}
+.card-a {
+  margin: 0 1rem;
+}
+.card-a:first-child {
+  margin: 0 1rem 0 0;
+}
+.card-a:last-child {
+  margin: 0 6rem 0 1rem;
+}
+.card-a > .caption {
+  display: none;
+}
+@-moz-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-o-keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes animHideCaption {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-moz-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-o-keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes animShowCaption {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
 }
