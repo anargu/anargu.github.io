@@ -24,7 +24,8 @@ images:
   </video>
 </figure>
 
-BembAR is an AR game-like app focused on marketing applications to engage a Company's users applying also elements of gamification. We find that this kind of applications can be implemented in marketing campaigns to produce an engagement effect.
+ 
+BembAR is a prototype of an AR game-like app which let users interact with the brand logo in Augmented Reality with elements of gamification. This application aims to show a new media to present the product or to engage with the brand. In addition, it adds elements of gamification in order to demonstrate an interactive ad campaign in order to increase engagement.
 
 
 <p align="center">
