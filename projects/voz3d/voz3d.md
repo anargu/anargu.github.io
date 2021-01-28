@@ -6,34 +6,28 @@ end_date: 2018-10-02 09:45:47 -05:00
 tags: [ projects ]
 description: "Voz 3D: Plataforma para el aprendizaje del lenguaje de señas a través de animaciones 3D"
 portrait_image: projects/voz3d/screenshot_1.png	
+page_url: https://voz3d.com/demo.html#/
 images:
-  - /projects/respiot/portrait.png
-  - /projects/respiot/photo_2021-01-09 11.35.34.jpeg
-  - /projects/respiot/2021-01-09 11.37.11.jpg
-  - /projects/respiot/2021-01-09 11.37.40.jpg
-  - /projects/respiot/2021-01-09 11.37.50.jpg
+	- /projects/voz3d/screenshot_1.png	
 ---
 
-[Resp IoT](https://prllel.co) is an IoT system for remote monitoring of vital signs in COVID patients. Project Winner at Engineering X Pandemic Preparedness.
+
+[Voz 3D](https://voz3d.com/demo.html#/) is a platform that works as a dictionary in which you search words or build a sentence and you can learn the gestures for sign languaje by a 3D avatar playing the animation.
 
 <hr/>
-My duties were:
-- Frontend development of PWA Application. Using Vue.js 3.0, Typescript and Jest for testing
-- Backend development. I used Firebase as the main tool for: database (Firestore), Push Notifications (FCM), authentication, API endpoints (Cloud Functions), and hosting.
-- UI/UX Design and development of Frontend 
+My work in this project:
+
+- Development of the PWA Application:
+	- Frontend: Lit-Element (next version of Polymer), Three.js as Stylus
+	- Backend: Firebase for hosting
+	- Importing 3D models from Blender and converting them to a supported format for Three.js
 
 <div style="height: 20px;"></div>
-<style>
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 15px;
-}
-</style>
+
 <div class="grid-gallery">
-{% for item in page.images %}
+{% for item in images %}
   {% unless item contains 'portrait' %}
-		<img src="{{ item }}" width="200px" height="400px">
+<img src="{{ item }}">
 	{% endunless %}
 {% endfor %}
 </div>

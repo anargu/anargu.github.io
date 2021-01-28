@@ -36,7 +36,7 @@ html,body
 		height "calc(100% - %s)" % navbarHeightL
 
 .content-page-wrapper
-	margin 2rem 4.8rem 0 1rem
+	margin 2rem 1rem 0 1rem
 	padding-bottom 6rem
 	@media screen and (min-width: 768px)
 		margin 100px auto 0
@@ -70,6 +70,13 @@ html,body
 
 	// grid-template-columns repeat(auto-fill, 200px)
 	// grid-template-columns repeat(auto-fit, minmax(300px, 1fr) 150px)
+
+.grid-image-gallery
+	display grid
+	grid-template-columns repeat(auto-fit, minmax(100px, 1fr))
+	@media screen and (min-width: breakpointWidthM)
+		grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+	grid-gap 15px
 
 
 

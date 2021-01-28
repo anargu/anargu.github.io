@@ -14,26 +14,21 @@ images:
   - /projects/respiot/2021-01-09 11.37.50.jpg
 ---
 
-[Resp IoT](https://prllel.co) is an IoT system for remote monitoring of vital signs in COVID patients. Project Winner at Engineering X Pandemic Preparedness.
+[Resp IoT](https://respiot-live.web.app/) is an IoT system for remote monitoring of vital signs in COVID patients. Project Winner at Engineering X Pandemic Preparedness.
 
 <hr/>
 My duties were:
+
 - Frontend development of PWA Application. Using Vue.js 3.0, Typescript and Jest for testing
 - Backend development. I used Firebase as the main tool for: database (Firestore), Push Notifications (FCM), authentication, API endpoints (Cloud Functions), and hosting.
 - UI/UX Design and development of Frontend 
 
 <div style="height: 20px;"></div>
-<style>
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 15px;
-}
-</style>
-<div class="grid-gallery">
-{% for item in page.images %}
+
+<div class="grid-image-gallery">
+{% for item in images %}
   {% unless item contains 'portrait' %}
-		<img src="{{ item }}" width="200px" height="400px">
+<img src="{{ item }}">
 	{% endunless %}
 {% endfor %}
 </div>

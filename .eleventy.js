@@ -75,10 +75,10 @@ module.exports = function (eleventyConfig) {
 		
 		// eleventyConfig.addPassthroughCopy('*.css')
 		eleventyConfig.addPassthroughCopy('assets/')
-		// eleventyConfig.addPassthroughCopy('*.png')
-		// eleventyConfig.addPassthroughCopy('*.jpg')
-		// eleventyConfig.addPassthroughCopy('*.jpeg')
-		// eleventyConfig.addPassthroughCopy('*.mp4')
+		eleventyConfig.addPassthroughCopy('projects/**/*.png')
+		eleventyConfig.addPassthroughCopy('projects/**/*.jpg')
+		eleventyConfig.addPassthroughCopy('projects/**/*.jpeg')
+		eleventyConfig.addPassthroughCopy('projects/**/*.mp4')
 		// eleventyConfig.addPassthroughCopy('*.js')
 		
 		eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));

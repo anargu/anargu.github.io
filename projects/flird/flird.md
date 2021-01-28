@@ -10,12 +10,7 @@ images:
   - projects/flird/flird_birds.jpeg
 ---
 
-<figure class="video_container" align="left" style="
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    float: right;">
+<figure class="video_container" align="left">
   <video controls="true" allowfullscreen="true" width="200px" height="300px">
     <source src="/projects/flird/flird_demo.mp4" type="video/mp4">
   </video>
