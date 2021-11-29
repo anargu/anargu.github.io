@@ -1,5 +1,4 @@
 * {
-  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 body * {
@@ -33,6 +32,12 @@ body h1 {
 body p {
   font-size: 1rem;
   line-height: 1.5;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-family: sans-serif;
 }
 body[data-theme="dark"] {
   background: #131418;
@@ -496,7 +501,7 @@ body[data-theme="dark"] * {
   }
 }
 .caption .subtitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 1rem;
   margin: 0.2rem 0;
 }
@@ -540,7 +545,7 @@ body[data-theme="dark"] * {
   vertical-align: middle;
 }
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 html,
 body {
@@ -650,7 +655,7 @@ nav {
 }
 nav .menu-link {
   position: absolute;
-  font-family: 'Raleway', sans-serif;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   text-transform: uppercase;
   white-space: nowrap;
   font-style: normal;
