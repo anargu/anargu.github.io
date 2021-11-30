@@ -46,7 +46,7 @@
   
   <meta
     property="og:url"
-    content="/projects/respiot/"
+    content="/projects/environmental_monitor/"
   />
   <meta
     property="og:description"
@@ -64,7 +64,7 @@
   />
   <meta
     name="twitter:url"
-    content="/projects/respiot/"
+    content="/projects/environmental_monitor/"
   />
   <meta name="twitter:site" content="@anargu101" />
   <meta name="twitter:creator" content="@anargu101" />
@@ -212,40 +212,41 @@
 <div id="project">
 	<div class="content-page-wrapper">
 		<div class="content-page">
-			<p><a href="https://respiot-live.web.app/">Resp IoT</a> is an IoT system for remote monitoring of vital signs in COVID patients.
-Project Winner at Engineering X Pandemic Preparedness.</p>
-<h2>Motivation</h2>
-<p>In 2020, I think the major concern of everyone was the COVID-19 outbreak. Due
-to the high level of contagiousness of this virus, several people were infected
-and urged of medic attention. Along with this, people present respiratory
-issues as one of the earlier symptons that can diagnose this virus.
-However, the hospitals in most countries but specifically in countries with
-mid and low resources collapsed, what means that several people cannot receive
-medic attention or monitor their health status.
-Given the situation, the project RespIoT is a proposal of monitoring system of
-vital health signs.</p>
+			<h2>Motivation</h2>
+<p>This project was conceived in the first Residency of Gathering of Open Science
+Hardware (ReGOSH). ReGOSH is a series of residencies where researchers,
+developers, and makers are gathered into a laboratory to generate ideas,
+projects and share knowledge in order to create solutions that are accessible
+to anyone. Making accessible solutions mean that every project aims to be
+replicable so anyone can build the same solution for him/her.</p>
+<p>In the first residency taken in Porto Alegre, Brazil (2019) we proposed as a project to
+build an environmental monitor as a way to visualize the problem that lies in
+our city, Lima. Lima, Perú, is considered as one of the pollutant capital
+cities around the world. Air Pollution can generate diverse health problems in
+humans and it is produced by different factors in an environment. However, the
+most common of pollution in cities is the urban life, the emission that
+vehicles emit, and so on. However this threat remains invisible in some
+countries as there are not enough studies and data to reveal this danger
+in those places. Additionally, measuring the quality of air in a city is costly
+because there are not sensors that continuously measure the air at every
+location point in a city, and because the few sensors that exist are found in
+laboratories. Here is where the project Environmental Monitor comes in. This
+project proposes a low-cost air-quality sensor that can be implemented in any
+place to measure the level of pollution at that location. Making these devices
+accessible eases the process of implementing several sensors of this kind in
+different areas, so we are able to monitor the quality of air and gain
+visibility of the problem.</p>
 <h2>Tech Details</h2>
-<p>Specifically, RespIoT is a Internet of Things (IoT) solution that is compound
-by two parts hardware monitoring system and software infraestructure.
-The hardware monitoring system measures health parameters like respiratory,
-and heart rate, and oxygen saturation. The software infraestructure consists of
-a Progressive Web Application (PWA) that serves as display of measurements, and
-a serverless backend service to store the values and serves as a central
-communication between the web platform and the hardware.</p>
-<hr/>
-My duties were:
-<ul>
-<li>Frontend development of PWA Application. Using Vue.js 3.0, Typescript and Jest for testing</li>
-<li>Backend development. I used Firebase as the main tool for: database (Firestore), Push Notifications (FCM), authentication, API endpoints (Cloud Functions), and hosting.</li>
-<li>UI/UX Design and development of Frontend</li>
-</ul>
-<div style="height: 20px;"></div>
-<div class="grid-image-gallery">
-<img src="/projects/respiot/photo_2021-01-09 11.35.34.jpeg">
-<img src="/projects/respiot/2021-01-09 11.37.11.jpg">
-<img src="/projects/respiot/2021-01-09 11.37.40.jpg">
-<img src="/projects/respiot/2021-01-09 11.37.50.jpg">
-</div>
+<p>In order to develop of the first models of this sensor, first, we are focusing
+on the design of the low-cost sensor. The first questions we came up with were
+what type of sensors would be useful to measure the quality of life and if they
+would be accessible or not. We analyzed different sensors in order to find the
+ones that matched our criteria.</p>
+<p>Then, we need to calibrate this sensors in order to reduce the error produced
+by the low level of accuracy that low-cost sensor provides. To solve this, we
+address it by studying different machine learning algorithms that let us
+calibrate effectively these sensors so the quality of date are well enough to
+capture as data.</p>
 
 		</div>
 	</div>
