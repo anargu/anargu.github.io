@@ -27,12 +27,33 @@ images:
 
 [Prllel](https://prllel.co) is an Augmented Reality (AR) social platform that empowers its users to create their own content in AR and place it on the real world.
 
+## Motivation
+Doing the next-gen social platform that allows us to express ourselves in a
+creative way using our space. The arrival of the Metaverse, the hype and then
+in an steady growth of the NFTs have leveraged some promising technologies.
+Augmented Reality (AR) is one of them. AR have gained certain importance in
+order to interact the virtual information with the real objects, however it is
+not yet accesible for everyone because of the elevated prices it cost to obtain
+a device like that.
+To tackle this, Prllel is a proposal that bets for the use of Artificial
+Intelligence models in order the close the gap of accesibility while
+maintaining a decent immersive experience.
+
 <hr/>
 
-Part of my job in this project are the following:
+## Technical challenges
+This project currently is in progress. Besides the challenges of building an
+entire social platform that goes from frontend to backend, the real challenge
+here is to produce a decent and immersive experience. As this was partially
+achieved by using native SDKs like ARKit and ARCore, it doesn't cover the
+gap of accesibility, at least for the most of Android devices. Currently, I am
+working on the development of a new AR engine based on the use neural networks related to depth estimation 
+that could learn our environment.
+
+Tasks and Tech details:
 
 - Design and development of Backend side, DB modeling.
 - UI/UX Design and development of Frontend side with ARCore (Android) and ARKit (iOS).
-- Prllel is developed using [Flutter Framework](https://flutter.dev/).
+- Prllel platform is built using [Flutter Framework](https://flutter.dev/).
 
 

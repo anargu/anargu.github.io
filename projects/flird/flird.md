@@ -17,14 +17,27 @@ images:
 </figure>
 
 
-Flird is a collaborative project to deliver a cultural experience in Parque El Olivar in San Isidro district. The proposal is to show 3D models of birds which inhabits in Parque El Olivar place. People which have already installed the app and visits the place or have the book which contains the photo of these birds, can visualize the 3D animated model of the bird. In addition, we attached the sound that emits the animal.
+## Motivation
+
+The project is a result from the bootcamp held in Lab San Isidro. Here, in
+collaboration with the Municipality of San Isidro, we developed a mobile
+application that interacts with the book produced by the municipality that
+shows birds that live in "El Olivar" park. The application displays a 3D
+animation of the bird that is scanned while focusing to the bird in the book.
+
+## Tech Details & Challenges
+
+The AR experience was built with Unity IDE and Vuforia SDK. 
+In order to make it interactive to the images showed in the book, we chose
+the mechanism of Image based Tracking to recognize the images and display the
+corresponding bird.
+
+
 <hr/>
 
 
-Part of my job in this project are the following:
-- Developed the AR application with Unity And Vuforia.
-
 The modeling and animating tasks of the birds were made by [Jean Pierre Tincopa](https://www.instagram.com/jptincopa/).
+
 <p align="center">
   <img src="/projects/flird/flird_birds.jpeg" width="300px">
 </p>
