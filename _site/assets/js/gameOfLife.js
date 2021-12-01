@@ -1,4 +1,6 @@
 let defaultRun = true
+
+const mode = body.getAttribute("data-theme");
 var c = document.getElementById('c'),
     ctx = c.getContext('2d'),
     cells,
@@ -8,9 +10,13 @@ var c = document.getElementById('c'),
       grid: 30,
       slower: 10,
     },
-    colors = {
+    darkColors = {
       dead: '#0a0911',
-      alive: '#2a0a57'//'#5915bb'
+      alive: '#2a0a57', //'#5915bb'
+    },
+    lightColors = {
+      dead: '#eaeaea',
+      alive: '#e6d4ff', //'#5915bb'
     },
     run = defaultRun;
 
@@ -25,9 +31,12 @@ function Cell(x, y, i, j, status) {
 
 function drawCell(cell) {
     ctx.beginPath();
-    ctx.fillStyle = colors[cell.status];
+    ctx.fillStyle = body.getAttribute("data-theme") === 'dark' 
+    ? darkColors[cell.status]
+    : lightColors[cell.status];
     ctx.rect(cell.x, cell.y, cellSize, cellSize);
     ctx.fill();
+    ctx.strokeStyle = body.getAttribute("data-theme") === 'dark' ? '#0a0911' : '#d7d7d7';
     ctx.stroke();
 }
 

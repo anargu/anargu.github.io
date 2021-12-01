@@ -112,7 +112,7 @@
 
 
 
-<body data-theme="dark" class="notransition" data-scroll-container>
+<body data-theme="light" class="notransition" data-scroll-container>
 	<div id="loading-el" class="fullscreen-loading">
 		<div class="loading-element">
 			<span id="fl-first-line" class="ip-inner">Hi,</span>
@@ -125,7 +125,7 @@
 		const fl = document.querySelector('#loading-el');
 		const alreadyVisitedKey = 'alreadyVisited';
 		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
-		const LOADING_ANIMATION_DURATION = 2000
+		const LOADING_ANIMATION_DURATION = 100
 
 
 		const firstLineGet = () => document.querySelector('#fl-first-line')
@@ -140,6 +140,7 @@
 			secondLineGet().innerHTML = 'Just a second...'
 		}
 		fl.classList.add('loading')
+
 		window.onload = () => {
 					setTimeout(() => {
 			fl.classList.remove('loading')
@@ -155,7 +156,7 @@
 		if (state === "dark") {
 			body.setAttribute("data-theme", "dark");
 		} else if (state === "light") {
-			body.removeAttribute("data-theme");
+			body.setAttribute("data-theme", "light");
 		} else {
 			localStorage.setItem("theme", data);
 		}
@@ -165,6 +166,24 @@
 
 	setTimeout(() => body.classList.remove("notransition"), 75);
 </script>
+
+<style>
+body[data-theme="dark"] .mode-sunny {
+  display: none;
+}
+body[data-theme="dark"] .mode-moon {
+  display: inherit;
+  stroke: white;
+}
+
+body[data-theme="light"] .mode-moon {
+  display: none;
+}
+body[data-theme="light"] .mode-sunny {
+  display: inherit;
+  stroke: black;
+}
+</style>
 
 <div class="navbar" role="navigation">
 	<nav class="menu"><a href="/"
@@ -177,7 +196,50 @@
 		</a><a href="/about/"
 			class="menu-link top-left inactive">
 			About me
-		</a><div class="right-bar  elevated  ">
+		</a>
+
+    <div></div>
+    
+    <div class="sun">
+      <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+	<title>LIGHT</title>
+	<line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="403.08" y1="108.92" x2="369.14" y2="142.86"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="142.86" y1="369.14" x2="108.92" y2="403.08"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="403.08" y1="403.08" x2="369.14" y2="369.14"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="142.86" y1="142.86" x2="108.92" y2="108.92"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+</svg>
+
+
+
+
+
+<svg class="mode-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+	<title>DARK</title>
+	<line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="403.08" y1="108.92" x2="369.14" y2="142.86"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="142.86" y1="369.14" x2="108.92" y2="403.08"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="403.08" y1="403.08" x2="369.14" y2="369.14"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<line x1="142.86" y1="142.86" x2="108.92" y2="108.92"
+		style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+	<circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+</svg>
+
+    </div><div class="right-bar  elevated  ">
 			<div class="inner-content">
 				<a class="inner-link" href="mailto:anthony.arostegui@gmail.com">Contact Me</a><a class="share-link" href="https://github.com/anargu" target="_blank" rel="noopener" >
 						
@@ -208,10 +270,23 @@
 		</div></nav>
 </div>
 
+<script>
+	const themeIcon = document.body.querySelector(".sun");
+  if (themeIcon) {
+    themeIcon.addEventListener("click", () => {
+      const themeData = body.getAttribute("data-theme");
+      const newThemeData = themeData === "light" ? "dark" : "light";
+      body.setAttribute("data-theme", newThemeData);
+      localStorage.setItem("theme", newThemeData);
+    })
+  }
+</script>
+
 	
 <div id="project">
 	<div class="content-page-wrapper">
 		<div class="content-page">
+      <h1> Voz 3D </h1>
 			<p><a href="https://voz3d.com/demo.html#/">Voz 3D</a> is a platform that works as a dictionary
 in which you search words or build a sentence and you can learn the gestures
 for sign languaje by a 3D avatar playing the animation.</p>
