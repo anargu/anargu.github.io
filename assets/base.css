@@ -45,6 +45,12 @@ body[data-theme="dark"] {
 body[data-theme="dark"] * {
   color: lightColor;
 }
+body[data-theme="light"] {
+  background: lightColor;
+}
+body[data-theme="light"] * {
+  color: darkColor;
+}
 ::-webkit-scrollbar-track {
   background-color: #111115;
 }
@@ -510,6 +516,10 @@ body[data-theme="dark"] * {
     font-size: _fontSize(1.5);
   }
 }
+.author-photo img {
+  border-radius: 50%;
+  width: 200px !important;
+}
 .author-header h2 {
   font-family: displayFont;
   font-size: 3rem;
@@ -517,12 +527,12 @@ body[data-theme="dark"] * {
 }
 @media screen and (min-width: 768px) {
   .author-header h2 {
-    font-size: 6rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .author-header h2 {
-    font-size: 8rem;
+    font-size: 4rem;
   }
 }
 .is-svg-24x24 svg {
@@ -543,4 +553,12 @@ body[data-theme="dark"] * {
 }
 .inline-vertical-center span {
   vertical-align: middle;
+}
+#project h1 {
+  font-size: 3rem;
+}
+@media screen and (min-width: 1500px) {
+  #project h1 {
+    font-size: 4rem;
+  }
 }
