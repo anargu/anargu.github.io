@@ -1,4 +1,4 @@
-mode: dark
+mode: light
 title: Anthony Aróstegui
 description: anargu website
 lang: en
@@ -6,13 +6,13 @@ author:
   first_name: Anthony # author name
   last_name: Aróstegui
   bio: >- # tell to the world
-    Industrial engineer / Software developer / AR/VR developer / AI and ML enthusiast. 
+    Industrial engineer / Software developer / Researcher / AR/VR developer. 
   username: username # general username
   github: anargu # github username
   twitter: anargu101 # twitter username
   facebook: anthony.arosteguiguillen # facebook username
   email: anthony.arostegui@gmail.com # email adress
-  avatar: assets/anargu.jpg # change with your own avatar
+  avatar: /assets/ANTHONY_AROSTEGUI.jpeg # change with your own avatar
 url: https://anargu.github.io
 permalink: /:title/
 image: assets/ogp.png

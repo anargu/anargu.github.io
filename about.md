@@ -6,7 +6,7 @@ excerpt: WIP
 comments: false
 ---
 
-Hi, I am a Software developer with 5 years of full-stack experience designing, developing and enhancing software solutions and research scientific projects. Passionate about science, new technologies, and innovation in computer vision projects. Experience developing and implementing augmented reality projects.
+Hi, I am a Software developer with five years of full-stack experience designing, developing, and enhancing software solutions and doing scientific research projects. Passionate about science, new technologies, and innovation in computer vision projects. Experience developing and implementing augmented reality projects.
 
 ## Tech Skills 
 EXPERT\
@@ -25,7 +25,7 @@ ENTHUSIAST\
 
 Bachelor degree in Industrial Engineering with specialization in Information and Technology (IT), 2017
 
-- Top fourth in my career.
+- Top fourth in my class.
 
 ### Coursera & deeplearning.ai
 

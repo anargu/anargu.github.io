@@ -6,7 +6,7 @@
 		if (state === "dark") {
 			body.setAttribute("data-theme", "dark");
 		} else if (state === "light") {
-			body.removeAttribute("data-theme");
+			body.setAttribute("data-theme", "light");
 		} else {
 			localStorage.setItem("theme", data);
 		}
@@ -16,6 +16,24 @@
 
 	setTimeout(() => body.classList.remove("notransition"), 75);
 </script>
+
+<style>
+body[data-theme="dark"] .mode-sunny {
+  display: none;
+}
+body[data-theme="dark"] .mode-moon {
+  display: inherit;
+  stroke: white;
+}
+
+body[data-theme="light"] .mode-moon {
+  display: none;
+}
+body[data-theme="light"] .mode-sunny {
+  display: inherit;
+  stroke: black;
+}
+</style>
 
 <div class="navbar" role="navigation">
 	<nav class="menu">
@@ -34,6 +52,13 @@
 			{%- if menu.external -%} target="_blank" rel="noopener" {%- endif -%}>
 			{{ menu.title }}
 		</a>
+
+    <div></div>
+    
+    <div class="sun">
+      {% include icons/sun.html %}
+    </div>
+
 
 		{%- elsif menu.position == 'right' -%}
 		<div class="right-bar {% if url != '/' %} elevated {% endif %} ">
@@ -68,3 +93,15 @@
 
 	</nav>
 </div>
+
+<script>
+	const themeIcon = document.body.querySelector(".sun");
+  if (themeIcon) {
+    themeIcon.addEventListener("click", () => {
+      const themeData = body.getAttribute("data-theme");
+      const newThemeData = themeData === "light" ? "dark" : "light";
+      body.setAttribute("data-theme", newThemeData);
+      localStorage.setItem("theme", newThemeData);
+    })
+  }
+</script>

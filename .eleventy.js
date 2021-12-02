@@ -84,6 +84,11 @@ module.exports = function (eleventyConfig) {
 		eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 		eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
 
+    eleventyConfig.addLiquidFilter("reverse", (collection) => {
+        const arr = [...collection];
+        return arr.reverse();
+    });
+
 		eleventyConfig.addLiquidShortcode("Image", async function(src, alt) {
 			if (!alt) {
 				throw new Error(`Missing \`alt\` on myImage from: ${src}`);

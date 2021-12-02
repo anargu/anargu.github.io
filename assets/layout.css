@@ -16,10 +16,8 @@ body {
     margin: 0rem leftMarginDesktop 0;
   }
 }
-@media screen and (min-width: 1500px) {
-  .page-wrapper {
-    margin: 0 leftMarginDesktopXL 0;
-  }
+max-width: 1200px {
+  margin: 0 auto;
 }
 .background-decorator {
   position: fixed;

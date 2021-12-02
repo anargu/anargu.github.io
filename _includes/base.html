@@ -15,7 +15,7 @@
 		const fl = document.querySelector('#loading-el');
 		const alreadyVisitedKey = 'alreadyVisited';
 		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
-		const LOADING_ANIMATION_DURATION = 2000
+		const LOADING_ANIMATION_DURATION = 100
 
 
 		const firstLineGet = () => document.querySelector('#fl-first-line')
@@ -30,6 +30,7 @@
 			secondLineGet().innerHTML = 'Just a second...'
 		}
 		fl.classList.add('loading')
+
 		window.onload = () => {
 					setTimeout(() => {
 			fl.classList.remove('loading')

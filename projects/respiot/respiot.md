@@ -19,33 +19,33 @@ Project Winner at Engineering X Pandemic Preparedness.
 
 ## Motivation
 
-In 2020, I think the major concern of everyone was the COVID-19 outbreak. Due
-to the high level of contagiousness of this virus, several people were infected
-and urged of medic attention. Along with this, people present respiratory
-issues as one of the earlier symptons that can diagnose this virus.
+In 2020, I think the primary concern of everyone was the COVID-19 outbreak. Due
+to this virus's high level of contagiousness, several people were infected and urged for medical attention. Along with this, people present respiratory
+issues as one of the earlier symptoms, which can be used to diagnose this virus.
 However, the hospitals in most countries but specifically in countries with 
-mid and low resources collapsed, what means that several people cannot receive 
+mid and low resources collapsed, which means that several people cannot receive 
 medic attention or monitor their health status. 
-Given the situation, the project RespIoT is a proposal of monitoring system of
+Given the situation, the project RespIoT is a proposal for monitoring system of
 vital health signs. 
 
 
 ## Tech Details
 
-Specifically, RespIoT is a Internet of Things (IoT) solution that is compound 
-by two parts hardware monitoring system and software infraestructure. 
+Specifically, RespIoT is an Internet of Things (IoT) solution that is compound 
+by two parts hardware monitoring system and software infrastructure. 
 The hardware monitoring system measures health parameters like respiratory, 
-and heart rate, and oxygen saturation. The software infraestructure consists of
-a Progressive Web Application (PWA) that serves as display of measurements, and 
-a serverless backend service to store the values and serves as a central
+and heart rate and oxygen saturation. The software infrastructure consists of
+a Progressive Web Application (PWA) that serves as a display of measurements, and 
+a serverless backend service to store the values and functions as a central
 communication between the web platform and the hardware. 
 
 <hr/>
-My duties were:
+My duties are:
 
-- Frontend development of PWA Application. Using Vue.js 3.0, Typescript and Jest for testing
-- Backend development. I used Firebase as the main tool for: database (Firestore), Push Notifications (FCM), authentication, API endpoints (Cloud Functions), and hosting.
-- UI/UX Design and development of Frontend 
+- Frontend development of PWA Application. Using Vue.js 3.0, Typescript, and Jest for testing
+- Backend development. I used Firebase as the primary tool for the database (Firestore), Push Notifications (FCM), authentication, API endpoints (Cloud Functions), and hosting.
+- UI/UX Design and development of the frontend 
+
 
 <div style="height: 20px;"></div>
 

@@ -19,17 +19,16 @@ images:
 
 ## Motivation
 
-The project is a result from the bootcamp held in Lab San Isidro. Here, in
-collaboration with the Municipality of San Isidro, we developed a mobile
-application that interacts with the book produced by the municipality that
+The project is a result of the Bootcamp held in Lab San Isidro. In
+collaboration with the Municipality of San Isidro, we developed a mobile application that interacts with the book produced by the municipality that
 shows birds that live in "El Olivar" park. The application displays a 3D
-animation of the bird that is scanned while focusing to the bird in the book.
+animation of the bird that is scanned while focusing on the bird in the book.
 
 ## Tech Details & Challenges
 
 The AR experience was built with Unity IDE and Vuforia SDK. 
-In order to make it interactive to the images showed in the book, we chose
-the mechanism of Image based Tracking to recognize the images and display the
+In order to make it interactive with the images shown in the book, we chose
+the mechanism of Image-Based Tracking to recognize the pictures and display the
 corresponding bird.
 
 

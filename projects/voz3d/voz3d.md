@@ -12,26 +12,23 @@ images:
 ---
 
 
-[Voz 3D](https://voz3d.com/demo.html#/) is a platform that works as a dictionary 
-in which you search words or build a sentence and you can learn the gestures 
-for sign languaje by a 3D avatar playing the animation.
+[Voz 3D](https://voz3d.com/demo.html#/) is a platform that works like a dictionary 
+in which you search words or build a sentence, and you can learn the gestures 
+for sign language by a 3D avatar playing the animation.
 
 ## Motivation
 
 Towards a more inclusive society, Voz3D is an agent that aims to close this gap. 
-This platform can be understood as learning resource of
-sign language so more people can learn and communicate to deaf people. 
-
+This platform can be understood as a learning resource of
+sign language so more people can learn and communicate with deaf people. 
 
 ## Tech Details
 
 Making the web interactive like a google translator but with a 3D model as a
-response was a challenge we overcame by using web libraries that allowed us to
-handle the 3D models and its respective animations. For this case, it was
-THREE.js. Therefore, once loaded the 3D model on the web, handling each input 
-of the translator whether by text or voice was directed to the corresponding
-animation. If the input is a sentence, then it will concatenate amont the 
-corresponding animations.
+response was a challenge I overcame by using web libraries to
+handle the 3D models and their respective animations. For this case, it was THREE.js to handle and load the 3D models. Once loaded on the web, each translator input, whether by text or voice, was directed to the corresponding
+animation. If the information is a sentence, then it will concatenate among the 
+related gestural animations.
 
 <hr/>
 

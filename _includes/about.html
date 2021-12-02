@@ -5,6 +5,9 @@ layout: base.html
 <div id="about">
 	<div class="content-page-wrapper">
 		<div class="content-page">
+      <div class="author-photo">
+        <img src="{{site.author.avatar}}" />
+      </div>
 			<div class="author-header">
 				<h2>{{ site.author.first_name }} {{ site.author.last_name }}</h2>
 			</div>
@@ -12,7 +15,7 @@ layout: base.html
 				<a href="mailto:{{site.author.email}}">{{site.author.email}}</a>
 			</div>
 			<div class="py-4 is-svg-24x24">
-				<a href="/assets/misc/AnthonyArostegui_vR_EN.pdf" download class="inline-vertical-center">
+				<a href="/assets/misc/aarostegui_full_cv.pdf" download class="inline-vertical-center">
 					<span>CV here:</span> <span>{% include icons/file-text.html %}</span>
 				</a>
 			</div>

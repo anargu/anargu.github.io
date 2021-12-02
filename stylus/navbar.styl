@@ -9,7 +9,7 @@ nav
 	vertical-align middle
 	display grid
 	margin 0rem 60px 0 1.5rem
-	grid-template-columns repeat(2, min-content)
+	grid-template-columns repeat(2, min-content) auto min-content
 	@media screen and (min-width: breakpointWidthM)
 		height navbarHeightM
 		margin 0 100px
@@ -18,12 +18,11 @@ nav
 		margin 0 200px
 	.menu-link
 		position: absolute
-		font-family: defaultFont
+		font-family: alternativeFont
 		text-transform uppercase
 		white-space nowrap
 		font-style: normal
 		font-weight: normal
-		color: lightColor
 		@media screen and (max-width: 600px)
 			font-size fontSize
 		@media screen and (min-width: 601px)
@@ -66,15 +65,14 @@ nav
 			transform rotate(90deg)
 			transform-origin 100% 0
 			width 100vh
-	.right-bar.elevated
-		background darkColor
-		box-shadow:
-		0 2.8px 9px 3px rgba(0, 0, 0, 0.27),
-		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-		0 12.5px 10px rgba(0, 0, 0, 0.06),
-		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-		0 100px 80px rgba(0, 0, 0, 0.12)
+	/* .right-bar.elevated */
+	/* 	box-shadow: */
+	/* 	0 2.8px 9px 3px rgba(0, 0, 0, 0.27), */
+	/* 	0 6.7px 5.3px rgba(0, 0, 0, 0.048), */
+	/* 	0 12.5px 10px rgba(0, 0, 0, 0.06), */
+	/* 	0 22.3px 17.9px rgba(0, 0, 0, 0.072), */
+	/* 	0 41.8px 33.4px rgba(0, 0, 0, 0.086), */
+	/* 	0 100px 80px rgba(0, 0, 0, 0.12) */
 	.right-bar > .inner-content
 		height leftBarThickness
 		display grid
@@ -89,6 +87,7 @@ nav
 		align-self center
 		text-align left
 		text-transform uppercase
+		font-family: alternativeFont
 		margin 0 1.5rem
 		font-size fontSize
 		@media screen and (max-height: 400px)
@@ -109,11 +108,21 @@ nav
 		@media screen and (min-width: 900px)
 			width 32px
 			height 32px
+  .sun {
+    align-self end
+  }
 
 
 body[data-theme="dark"] span.menu-icon > svg
 	fill lightColor
 	
 
+		
+body[data-theme="dark"] .right-bar {
+	background darkColor;
+}
+body[data-theme="light"] .right-bar {
+	background lightColor;
+}
 
 

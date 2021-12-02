@@ -40,7 +40,12 @@ body
 body[data-theme="dark"]
 	background darkColor
 	*
-		color lightColor
+		color lightColor;
+
+body[data-theme="light"]
+	background lightColor;
+	*
+		color darkColor;
 
 
 ::-webkit-scrollbar-track
@@ -106,6 +111,11 @@ for k, v in spacing
 			font-size _fontSize(1.5)
 
 	
+.author-photo img {
+  border-radius: 50%;
+  width: 200px !important;
+}
+
 .author-header h2
 	font-family displayFont
 	font-size 3rem
@@ -113,11 +123,11 @@ for k, v in spacing
 	// margin-top 0rem
 	@media screen and (min-width: 768px)
 		// line-height 1.2
-		font-size 6rem
+		font-size 3rem
 		// margin-bottom 1.2rem
 	@media screen and (min-width: 1500px)
 		// margin-bottom 3rem
-		font-size 8rem
+		font-size 4rem
 
 .is-svg-24x24 svg
 	width 24px
@@ -131,3 +141,10 @@ for k, v in spacing
 .inline-vertical-center span
 	vertical-align middle
 
+#project h1 {
+  font-size: 3rem;
+
+	@media screen and (min-width: 1500px) {
+    font-size: 4rem;
+  }
+}

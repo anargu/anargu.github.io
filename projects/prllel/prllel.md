@@ -6,7 +6,7 @@ start_date: 2017-01-01 00:00:00 -05:00
 tags:
   - projects
 description: "Prllel: Augmented Reality Social Platform for sharing stories in real places."
-portrait_image: projects/prllel/portrait_2.png
+portrait_image: projects/prllel/demo_4.jpeg
 video: "/projects/prllel/demo.mp4"
 images:
   - /projects/prllel/demo_2.jpg
@@ -29,25 +29,22 @@ images:
 
 ## Motivation
 Doing the next-gen social platform that allows us to express ourselves in a
-creative way using our space. The arrival of the Metaverse, the hype and then
-in an steady growth of the NFTs have leveraged some promising technologies.
-Augmented Reality (AR) is one of them. AR have gained certain importance in
-order to interact the virtual information with the real objects, however it is
-not yet accesible for everyone because of the elevated prices it cost to obtain
+creative way using our space. The arrival of the Metaverse and the steady growth of the NFTs have leveraged some promising technologies.
+Augmented Reality (AR) is one of them. AR has gained particular importance in
+order to interact the virtual information with the real objects; however, it is
+not yet accessible for everyone because of the elevated prices it cost to obtain
 a device like that.
-To tackle this, Prllel is a proposal that bets for the use of Artificial
-Intelligence models in order the close the gap of accesibility while
-maintaining a decent immersive experience.
+To tackle this, Prllel is a proposal that bets the use of Artificial Intelligence models to close the gap of accessibility while maintaining a decently immersive experience.
 
 <hr/>
 
 ## Technical challenges
-This project currently is in progress. Besides the challenges of building an
+
+This project is currently in progress. Besides the challenges of building an
 entire social platform that goes from frontend to backend, the real challenge
-here is to produce a decent and immersive experience. As this was partially
-achieved by using native SDKs like ARKit and ARCore, it doesn't cover the
-gap of accesibility, at least for the most of Android devices. Currently, I am
-working on the development of a new AR engine based on the use neural networks related to depth estimation 
+here is to produce a decent and immersive experience. As this was partially achieved by using native SDKs like ARKit and ARCore, it doesn't cover the
+gap of accessibility, at least for most Android devices. Currently, I am
+working on developing a new AR engine based on the use of neural networks related to depth estimation 
 that could learn our environment.
 
 Tasks and Tech details:

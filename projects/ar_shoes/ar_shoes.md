@@ -19,13 +19,13 @@ tags:
   </video>
 </figure>
 
-My first AR project, ARShoes, is an implementation of a mobile application to show products like shoes in 3D by recognizing a marker (an image of brand's logo) in magazines. The app was developed for Android with tools: Unity, Vuforia SDK (Augmented Reality SDK) and Autodesk 123D Catch (for 3d modeling from a set of image captures)
+In my first AR project, ARShoes, I implemented a mobile application that shows products like shoes in 3D by recognizing a marker (an image of the brand's logo) in magazines. I developed the app for Android with tools: Unity, Vuforia SDK (Augmented Reality SDK), and Autodesk 123D Catch (for 3d modeling from a set of image captures)
 
 <hr/>
 
 Main duties:
 
-- Asses the effectiveness of an AR app as an educational tool to learn 3D geometries in Calculus course.
+- Assess the effectiveness of an AR app as an educational tool to learn 3D geometries in the Calculus course.
 - Develop the AR application with Unity And Vuforia.
 - Organize and present the investigation project at VLI (Vive La Ingeniería) exposition in UTEC. 
 
