@@ -2,7 +2,7 @@
 layout: project
 title: ARShoes
 start_date: 2014-04-01 00:00:00 -05:00
-end_date: 2017-07-01 00:00:00 -05:00
+end_date: 2014-07-01 00:00:00 -05:00
 description: Description Project
 video: "projects/ar_shoes/arshoes_demo.mp4"
 portrait_image: projects/ar_shoes/snapshot_1.png

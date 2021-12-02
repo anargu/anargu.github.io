@@ -3,7 +3,8 @@ layout: base.html
 ---
 <div id="projects" class="page-wrapper">
 	<div class="list-grid">
-		{% for post in collections.projects %}
+		{% assign projects = collections.projects | reverse %}
+		{% for post in projects %}
 		<div class="card-b" >
 			<div class="portrait-image-container">
 				{% Image post.data.portrait_image, "project image" %}
