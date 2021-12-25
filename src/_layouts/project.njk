@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+<div class="portrait">
+  {% if portrait_video %}
+    <figure class="video_container">
+      <video controls="true" allowfullscreen="true">
+        <source src="{{portrait_video}}" type="video/mp4">
+      </video>
+    </figure>
+  {% elif portrait_image %}
+    {% Image portrait_image, "project image" %}
+  {% endif %}
+</div>
+
+<div class="page project-page">
+
+  <div class="heading">
+    <h1> {{ title }} </h1>
+    {% if tags | hasTag('projects') %}
+      <p>
+        {{ start_date | dateFormat | defaultPresent }} - 
+        {{ end_date | dateFormat | defaultPresent }}
+      </p>
+    {% endif %}
+
+  </div>
+
+
+  {{ content | safe }}
+
+  {% if images %}
+    <div class="grid-image-gallery {{ 'only-one' if images.length === 1 }}">
+      {% for item in images %}
+          {% Image item, "project image" %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="nav-items">
+      {%- for menu in navigation -%}
+        <a href="{{ menu.url }}">{{ menu.title }}</a>
+        {% if not loop.last %}
+          <span class="bull">&bull;</span>
+        {% endif %}
+      {%- endfor -%} 
+    </div>
+    <div class="network-items">
+      {%- for share in site.shares -%}
+        <a class="network-iten"
+          href="{{ share.url }}"
+          target="_blank"
+        >
+          <img src="{{ share.icon }}" />
+        </a>
+      {%- endfor -%} 
+    </div>
+  </div>
+</footer>
+

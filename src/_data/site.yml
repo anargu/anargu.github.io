@@ -1,0 +1,37 @@
+mode: light
+title: Anthony Aróstegui
+description: anargu website
+lang: en
+author:
+  first_name: Anthony # author name
+  last_name: Aróstegui
+  bio: >- # tell to the world
+    Industrial engineer / Software developer / Researcher / AR/VR developer. 
+  long_bio: >- # tell to the world
+    Hi, I am a Software developer with five years of full-stack
+    experience designing, developing, and enhancing software solutions
+    and doing scientific research projects.
+    Passionate about science, new technologies, and innovation in computer vision projects.
+    Experience developing and implementing augmented reality projects.
+  username: username # general username
+  github: anargu # github username
+  twitter: anargu101 # twitter username
+  facebook: anthony.arosteguiguillen # facebook username
+  email: anthony.arostegui@gmail.com # email adress
+  avatar: /assets/ANTHONY_AROSTEGUI.jpeg # change with your own avatar
+url: https://anargu.github.io
+permalink: /:title/
+image: assets/ogp.png
+shares:
+  - icon: '/assets/github.svg'
+    url: 'https://github.com/anargu'
+    external: true
+  - icon: '/assets/linkedin.svg'
+    url: 'https://www.linkedin.com/in/anthonyarostegui/'
+    external: true
+  - icon: '/assets/twitter.svg'
+    url: 'https://twitter.com/anargu101'
+    external: true
+  - icon: '/assets/instagram.svg'
+    url: 'https://www.instagram.com/anargu101/'
+    external: true
