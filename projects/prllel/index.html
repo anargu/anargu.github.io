@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,12 +11,17 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
   <meta name="apple-mobile-web-app-title" content="Anthony Aróstegui" />
   <title>
-    Anthony Aróstegui
+  
+    Anthony Aróstegui 
+  
   </title>
 	
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
 
   <link
     rel="alternate"
@@ -103,104 +109,45 @@
   <meta name="msapplication-TileColor" content="#1B1D25" />
   <meta name="theme-color" content="#1B1D25" />
 
-  <link rel="stylesheet" href="/assets/minimalism.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 
-	<link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media='all'; this.onload=null;">
-	
+  <!--
+	<link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'; this.onload=null;">
+  -->
 </head>
 
 
 
+<body data-theme="light">
+  <div class="navbar">
+  <div class="menu-icon">
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="inline-block w-6 h-6 stroke-current"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+</svg>
 
-<body data-theme="light" class="notransition" data-scroll-container>
-	<div id="loading-el" class="fullscreen-loading">
-		<div class="loading-element">
-			<span id="fl-first-line" class="ip-inner">Hi,</span>
-		</div>
-		<div class="loading-element">
-			<span id="fl-second-line" class="ip-inner">Nice to meet you</span>
-		</div>
-	</div>
-	<script>
-		const fl = document.querySelector('#loading-el');
-		const alreadyVisitedKey = 'alreadyVisited';
-		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
-		const LOADING_ANIMATION_DURATION = 100
+  </div>
 
-
-		const firstLineGet = () => document.querySelector('#fl-first-line')
-		const secondLineGet = () => document.querySelector('#fl-second-line')
-		if (!alreadyVisited) {
-			window.localStorage.setItem(alreadyVisitedKey, 'true')
-			firstLineGet().innerHTML = 'Hi!'
-			secondLineGet().innerHTML = 'Welcome'
-
-		} else {
-			firstLineGet().innerHTML = ''
-			secondLineGet().innerHTML = 'Just a second...'
-		}
-		fl.classList.add('loading')
-
-		window.onload = () => {
-					setTimeout(() => {
-			fl.classList.remove('loading')
-			fl.classList.add('loaded')
-					}, LOADING_ANIMATION_DURATION)
-		}
-	</script>
-	<script>
-	const body = document.body;
-	const data = body.getAttribute("data-theme");
-
-	const initTheme = (state) => {
-		if (state === "dark") {
-			body.setAttribute("data-theme", "dark");
-		} else if (state === "light") {
-			body.setAttribute("data-theme", "light");
-		} else {
-			localStorage.setItem("theme", data);
-		}
-	};
-
-	initTheme(localStorage.getItem("theme"));
-
-	setTimeout(() => body.classList.remove("notransition"), 75);
-</script>
-
-<style>
-body[data-theme="dark"] .mode-sunny {
-  display: none;
-}
-body[data-theme="dark"] .mode-moon {
-  display: inherit;
-  stroke: white;
-}
-
-body[data-theme="light"] .mode-moon {
-  display: none;
-}
-body[data-theme="light"] .mode-sunny {
-  display: inherit;
-  stroke: black;
-}
-</style>
-
-<div class="navbar" role="navigation">
-	<nav class="menu"><a href="/"
-			class="menu-link top-left ">
-			@anargu
-		</a><a href="/projects/" class="menu-link  top-left
-
-   ">
-			Projects
-		</a><a href="/about/"
-			class="menu-link top-left inactive">
-			About me
-		</a>
+  <div class="navbar-items">
+    
+      <div class="navbar-item"><a href="/">Home</a></div>
+    
+      <div class="navbar-item"><a href="/projects/">Projects</a></div>
+    
+      <div class="navbar-item"><a href="/about/">About me</a></div>
+    
 
     <div></div>
-    
-    <div class="sun">
+    <div class="theme-switcher">
       <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
 	<title>LIGHT</title>
 	<line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
@@ -239,39 +186,40 @@ body[data-theme="light"] .mode-sunny {
 	<circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
 </svg>
 
-    </div><div class="right-bar  elevated  ">
-			<div class="inner-content">
-				<a class="inner-link" href="mailto:anthony.arostegui@gmail.com">Contact Me</a><a class="share-link" href="https://github.com/anargu" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 
-
-
-							
-					</a><a class="share-link" href="https://www.linkedin.com/in/anthonyarostegui/" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-
-
-						
-					</a><a class="share-link" href="https://twitter.com/anargu101" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-
-
-							
-					</a><a class="share-link" href="https://www.instagram.com/anargu101/" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-
-
-							
-					</a></div>
-		</div></nav>
+    </div>
+  </div>
+  
 </div>
 
 <script>
-	const themeIcon = document.body.querySelector(".sun");
+const navbarItems = document.querySelector('.navbar-items');
+
+const menuIcon = document.querySelector('.menu-icon');
+menuIcon?.addEventListener('click', (ev) => {
+  navbarItems?.classList.toggle('opened');
+  menuIcon?.classList.toggle('opened');
+});
+
+const body = document.body;
+const data = body.getAttribute("data-theme");
+
+const initTheme = (state) => {
+  if (state === "dark") {
+    body.setAttribute("data-theme", "dark");
+  } else if (state === "light") {
+    body.setAttribute("data-theme", "light");
+  } else {
+    localStorage.setItem("theme", data);
+  }
+};
+
+initTheme(localStorage.getItem("theme"));
+
+/* setTimeout(() => body.classList.remove("notransition"), 75); */
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const themeIcon = document.body.querySelector(".theme-switcher");
   if (themeIcon) {
     themeIcon.addEventListener("click", () => {
       const themeData = body.getAttribute("data-theme");
@@ -280,26 +228,32 @@ body[data-theme="light"] .mode-sunny {
       localStorage.setItem("theme", newThemeData);
     })
   }
+});
 </script>
 
-	
-<div id="project">
-	<div class="content-page-wrapper">
-		<div class="content-page">
-      <h1> Prllel </h1>
-			<!--
-<figure class="video_container" align="left" style="
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    float: right;">
-  <video controls="true" allowfullscreen="true" width="200px" height="300px">
-    <source src="/projects/prllel/demo.mp4" type="video/mp4">
-  </video>
-</figure>
--->
-<p><a href="https://prllel.co">Prllel</a> is an Augmented Reality (AR) social platform that empowers its users to create their own content in AR and place it on the real world.</p>
+ 
+
+  <div class="portrait">
+  
+    <picture><source type="image/avif" srcset="/img/sJvF8AdHBW-200.avif 200w, /img/sJvF8AdHBW-300.avif 300w, /img/sJvF8AdHBW-660.avif 660w, /img/sJvF8AdHBW-3000.avif 3000w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><source type="image/jpeg" srcset="/img/sJvF8AdHBW-200.jpeg 200w, /img/sJvF8AdHBW-300.jpeg 300w, /img/sJvF8AdHBW-660.jpeg 660w, /img/sJvF8AdHBW-3000.jpeg 3000w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><img alt="project image" loading="lazy" decoding="async" src="/img/sJvF8AdHBW-200.jpeg" width="3000" height="1000"></picture>
+  
+</div>
+
+<div class="page project-page">
+
+  <div class="heading">
+    <h1> Prllel </h1>
+    
+      <p>
+        Jan 1, 2017 - 
+        Present
+      </p>
+    
+
+  </div>
+
+
+  <p><a href="https://prllel.co">Prllel</a> is an Augmented Reality (AR) social platform that empowers its users to create their own content in AR and place it on the real world.</p>
 <h2>Motivation</h2>
 <p>Doing the next-gen social platform that allows us to express ourselves in a
 creative way using our space. The arrival of the Metaverse and the steady growth of the NFTs have leveraged some promising technologies.
@@ -308,7 +262,13 @@ order to interact the virtual information with the real objects; however, it is
 not yet accessible for everyone because of the elevated prices it cost to obtain
 a device like that.
 To tackle this, Prllel is a proposal that bets the use of Artificial Intelligence models to close the gap of accessibility while maintaining a decently immersive experience.</p>
-<hr/>
+  <div class="video-container">
+    <figure>
+      <video controls="true" allowfullscreen="true" alt="project video">
+        <source src="/projects/prllel/demo.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </div>
 <h2>Technical challenges</h2>
 <p>This project is currently in progress. Besides the challenges of building an
 entire social platform that goes from frontend to backend, the real challenge
@@ -323,12 +283,99 @@ that could learn our environment.</p>
 <li>Prllel platform is built using <a href="https://flutter.dev/">Flutter Framework</a>.</li>
 </ul>
 
-		</div>
-	</div>
+
+  
+    <div class="grid" data-masonry='{ 
+      "itemSelector": ".grid-item",
+      "gutter": 8
+     }'>
+      
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_2_auto_x2_colored_toned.jpg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/AWc-nYe6NM-2160.jpeg" width="2160" height="1232">
+  </div>
+  
+          </a>
+        </div>
+      
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_4.jpeg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/yjsRYDeXPg-720.jpeg" width="720" height="720">
+  </div>
+  
+          </a>
+        </div>
+      
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_5.jpeg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/lAZlLZRl2W-1080.jpeg" width="1080" height="1350">
+  </div>
+  
+          </a>
+        </div>
+      
+    </div>
+  
+
+  <!--
+  <div class="grid-image-gallery ">
+    
+        <img src="./src/projects/prllel/demo_2_auto_x2_colored_toned.jpg" alt="">
+        <picture><source type="image/avif" srcset="/img/AWc-nYe6NM-200.avif 200w, /img/AWc-nYe6NM-300.avif 300w, /img/AWc-nYe6NM-660.avif 660w, /img/AWc-nYe6NM-2160.avif 2160w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/AWc-nYe6NM-200.jpeg 200w, /img/AWc-nYe6NM-300.jpeg 300w, /img/AWc-nYe6NM-660.jpeg 660w, /img/AWc-nYe6NM-2160.jpeg 2160w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/AWc-nYe6NM-200.jpeg" width="2160" height="1232"></picture>
+    
+        <img src="./src/projects/prllel/demo_4.jpeg" alt="">
+        <picture><source type="image/avif" srcset="/img/yjsRYDeXPg-200.avif 200w, /img/yjsRYDeXPg-300.avif 300w, /img/yjsRYDeXPg-660.avif 660w, /img/yjsRYDeXPg-720.avif 720w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/yjsRYDeXPg-200.jpeg 200w, /img/yjsRYDeXPg-300.jpeg 300w, /img/yjsRYDeXPg-660.jpeg 660w, /img/yjsRYDeXPg-720.jpeg 720w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/yjsRYDeXPg-200.jpeg" width="720" height="720"></picture>
+    
+        <img src="./src/projects/prllel/demo_5.jpeg" alt="">
+        <picture><source type="image/avif" srcset="/img/lAZlLZRl2W-200.avif 200w, /img/lAZlLZRl2W-300.avif 300w, /img/lAZlLZRl2W-660.avif 660w, /img/lAZlLZRl2W-1080.avif 1080w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/lAZlLZRl2W-200.jpeg 200w, /img/lAZlLZRl2W-300.jpeg 300w, /img/lAZlLZRl2W-660.jpeg 660w, /img/lAZlLZRl2W-1080.jpeg 1080w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/lAZlLZRl2W-200.jpeg" width="1080" height="1350"></picture>
+    
+  </div>
+  -->
 </div>
 
 
-	<script src="/assets/js/elements.js"></script>
-</body>
+	<footer class="footer">
+  <div class="footer-inner">
+    <div class="nav-items"><a href="/">Home</a>
+        
+          <span class="bull">&bull;</span>
+        <a href="/projects/">Projects</a>
+        
+          <span class="bull">&bull;</span>
+        <a href="/about/">About me</a>
+        </div>
+    <div class="network-items"><a class="network-iten"
+          href="https://github.com/anargu"
+          target="_blank"
+        >
+          <img src="/assets/github.svg" />
+        </a><a class="network-iten"
+          href="https://www.linkedin.com/in/anthonyarostegui/"
+          target="_blank"
+        >
+          <img src="/assets/linkedin.svg" />
+        </a><a class="network-iten"
+          href="https://twitter.com/anargu101"
+          target="_blank"
+        >
+          <img src="/assets/twitter.svg" />
+        </a><a class="network-iten"
+          href="https://www.instagram.com/anargu101/"
+          target="_blank"
+        >
+          <img src="/assets/instagram.svg" />
+        </a></div>
+  </div>
+</footer>
 
+
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</body>
 </html>

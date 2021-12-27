@@ -11,7 +11,7 @@ var c = document.getElementById('c'),
       slower: 10,
     },
     darkColors = {
-      dead: '#0a0911',
+      dead: '#121212',
       alive: '#2a0a57', //'#5915bb'
     },
     lightColors = {
@@ -245,4 +245,5 @@ function update() {
     window.requestAnimFrame(update);       
 }
 update();
+
 

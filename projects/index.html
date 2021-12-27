@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,12 +11,17 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
   <meta name="apple-mobile-web-app-title" content="Anthony Aróstegui" />
   <title>
-    Anthony Aróstegui
+  
+    Anthony Aróstegui 
+  
   </title>
 	
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
 
   <link
     rel="alternate"
@@ -103,104 +109,45 @@
   <meta name="msapplication-TileColor" content="#1B1D25" />
   <meta name="theme-color" content="#1B1D25" />
 
-  <link rel="stylesheet" href="/assets/minimalism.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 
-	<link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media='all'; this.onload=null;">
-	
+  <!--
+	<link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'; this.onload=null;">
+  -->
 </head>
 
 
 
+<body data-theme="light">
+  <div class="navbar">
+  <div class="menu-icon">
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="inline-block w-6 h-6 stroke-current"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+</svg>
 
-<body data-theme="light" class="notransition" data-scroll-container>
-	<div id="loading-el" class="fullscreen-loading">
-		<div class="loading-element">
-			<span id="fl-first-line" class="ip-inner">Hi,</span>
-		</div>
-		<div class="loading-element">
-			<span id="fl-second-line" class="ip-inner">Nice to meet you</span>
-		</div>
-	</div>
-	<script>
-		const fl = document.querySelector('#loading-el');
-		const alreadyVisitedKey = 'alreadyVisited';
-		const alreadyVisited = window.localStorage.getItem(alreadyVisitedKey) === 'true';
-		const LOADING_ANIMATION_DURATION = 100
+  </div>
 
-
-		const firstLineGet = () => document.querySelector('#fl-first-line')
-		const secondLineGet = () => document.querySelector('#fl-second-line')
-		if (!alreadyVisited) {
-			window.localStorage.setItem(alreadyVisitedKey, 'true')
-			firstLineGet().innerHTML = 'Hi!'
-			secondLineGet().innerHTML = 'Welcome'
-
-		} else {
-			firstLineGet().innerHTML = ''
-			secondLineGet().innerHTML = 'Just a second...'
-		}
-		fl.classList.add('loading')
-
-		window.onload = () => {
-					setTimeout(() => {
-			fl.classList.remove('loading')
-			fl.classList.add('loaded')
-					}, LOADING_ANIMATION_DURATION)
-		}
-	</script>
-	<script>
-	const body = document.body;
-	const data = body.getAttribute("data-theme");
-
-	const initTheme = (state) => {
-		if (state === "dark") {
-			body.setAttribute("data-theme", "dark");
-		} else if (state === "light") {
-			body.setAttribute("data-theme", "light");
-		} else {
-			localStorage.setItem("theme", data);
-		}
-	};
-
-	initTheme(localStorage.getItem("theme"));
-
-	setTimeout(() => body.classList.remove("notransition"), 75);
-</script>
-
-<style>
-body[data-theme="dark"] .mode-sunny {
-  display: none;
-}
-body[data-theme="dark"] .mode-moon {
-  display: inherit;
-  stroke: white;
-}
-
-body[data-theme="light"] .mode-moon {
-  display: none;
-}
-body[data-theme="light"] .mode-sunny {
-  display: inherit;
-  stroke: black;
-}
-</style>
-
-<div class="navbar" role="navigation">
-	<nav class="menu"><a href="/"
-			class="menu-link top-left ">
-			@anargu
-		</a><a href="/projects/" class="menu-link  top-left
-
-   ">
-			Projects
-		</a><a href="/about/"
-			class="menu-link top-left inactive">
-			About me
-		</a>
+  <div class="navbar-items">
+    
+      <div class="navbar-item"><a href="/">Home</a></div>
+    
+      <div class="navbar-item"><a href="/projects/">Projects</a></div>
+    
+      <div class="navbar-item"><a href="/about/">About me</a></div>
+    
 
     <div></div>
-    
-    <div class="sun">
+    <div class="theme-switcher">
       <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
 	<title>LIGHT</title>
 	<line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
@@ -239,39 +186,40 @@ body[data-theme="light"] .mode-sunny {
 	<circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
 </svg>
 
-    </div><div class="right-bar  elevated  ">
-			<div class="inner-content">
-				<a class="inner-link" href="mailto:anthony.arostegui@gmail.com">Contact Me</a><a class="share-link" href="https://github.com/anargu" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 
-
-
-							
-					</a><a class="share-link" href="https://www.linkedin.com/in/anthonyarostegui/" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-
-
-						
-					</a><a class="share-link" href="https://twitter.com/anargu101" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-
-
-							
-					</a><a class="share-link" href="https://www.instagram.com/anargu101/" target="_blank" rel="noopener" >
-						
-								<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-
-
-							
-					</a></div>
-		</div></nav>
+    </div>
+  </div>
+  
 </div>
 
 <script>
-	const themeIcon = document.body.querySelector(".sun");
+const navbarItems = document.querySelector('.navbar-items');
+
+const menuIcon = document.querySelector('.menu-icon');
+menuIcon?.addEventListener('click', (ev) => {
+  navbarItems?.classList.toggle('opened');
+  menuIcon?.classList.toggle('opened');
+});
+
+const body = document.body;
+const data = body.getAttribute("data-theme");
+
+const initTheme = (state) => {
+  if (state === "dark") {
+    body.setAttribute("data-theme", "dark");
+  } else if (state === "light") {
+    body.setAttribute("data-theme", "light");
+  } else {
+    localStorage.setItem("theme", data);
+  }
+};
+
+initTheme(localStorage.getItem("theme"));
+
+/* setTimeout(() => body.classList.remove("notransition"), 75); */
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const themeIcon = document.body.querySelector(".theme-switcher");
   if (themeIcon) {
     themeIcon.addEventListener("click", () => {
       const themeData = body.getAttribute("data-theme");
@@ -280,198 +228,263 @@ body[data-theme="light"] .mode-sunny {
       localStorage.setItem("theme", newThemeData);
     })
   }
+});
 </script>
 
-	<div id="projects" class="page-wrapper">
-	<div class="list-grid">
-		
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/45d3db27-320.webp 320w , /images/45d3db27-640.webp 640w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/45d3db27-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/45d3db27-320.jpeg 320w , /images/45d3db27-640.jpeg 640w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/waving_cubes/">Waving Cubes</a> </p>
-				<p class="subtitle">
-				2020
-				
-					- 2020
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/c05c2f96-320.webp 320w , /images/c05c2f96-640.webp 640w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/c05c2f96-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/c05c2f96-320.jpeg 320w , /images/c05c2f96-640.jpeg 640w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/prllel/">Prllel</a> </p>
-				<p class="subtitle">
-				2017
-				
-				- current
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/b45c192e-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/b45c192e-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/b45c192e-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/environmental_monitor/">Environmental Monitor</a> </p>
-				<p class="subtitle">
-				2021
-				
-				- current
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/5b334ae5-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/5b334ae5-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/5b334ae5-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/respiot/">Resp IoT</a> </p>
-				<p class="subtitle">
-				2020
-				
-					- 2021
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/cf42d149-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/cf42d149-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/cf42d149-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/bembar/">BembAR</a> </p>
-				<p class="subtitle">
-				2016
-				
-					- 2016
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/5c323d0e-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/5c323d0e-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/5c323d0e-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/calcul_ar/">Calcul-AR</a> </p>
-				<p class="subtitle">
-				2014
-				
-					- 2014
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/638a5ec2-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/638a5ec2-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/638a5ec2-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/voz3d/">Voz 3D</a> </p>
-				<p class="subtitle">
-				2017
-				
-					- 2018
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/727cc3e4-320.webp 320w , /images/727cc3e4-640.webp 640w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/727cc3e4-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/727cc3e4-320.jpeg 320w , /images/727cc3e4-640.jpeg 640w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/flird/">Flird</a> </p>
-				<p class="subtitle">
-				2017
-				
-					- 2017
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-b" >
-			<div class="portrait-image-container">
-				<div class="image-wrapper"><picture> <source type="image/webp" srcset=" /images/ef43a18-320.webp 320w ," > <img
-				loading="lazy"
-				alt="project image"
-				src="/images/ef43a18-320.jpeg"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset=" /images/ef43a18-320.jpeg 320w ,"> </picture></div>
-			</div>
-			<div class="caption --right">
-				<p class="title"> <a href="/projects/ar_shoes/">ARShoes</a> </p>
-				<p class="subtitle">
-				2014
-				
-					- 2014
-				
-				</p>
-			</div>
-		</div>
-		
-		<div class="card-empty"></div>
-	</div>
+ 
 
+  <div class="projects-page page">
+  <div class="sidebar-menu">
+    <h1 class="section-title">Projects</h1>
+    <div class="projects-menu">
+      
+      <div class="project-menu-item">
+        <a href="/projects/prllel/">
+          Prllel
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/environmental_monitor/">
+          Environmental Monitor
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/flird/">
+          Flird
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/respiot/">
+          Resp IoT
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/calcul_ar/">
+          Calcul-AR
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/voz3d/">
+          Voz 3D
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/waving_cubes/">
+          Waving Cubes
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/bembar/">
+          BembAR
+        </a>
+      </div>
+      
+      <div class="project-menu-item">
+        <a href="/projects/ar_shoes/">
+          ARShoes
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="projects" class="projects page-wrapper">
+    <div class="grid-projects">
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/ISA7J1mtM8-200.avif 200w, /img/ISA7J1mtM8-300.avif 300w, /img/ISA7J1mtM8-660.avif 660w, /img/ISA7J1mtM8-1080.avif 1080w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/ISA7J1mtM8-200.jpeg 200w, /img/ISA7J1mtM8-300.jpeg 300w, /img/ISA7J1mtM8-660.jpeg 660w, /img/ISA7J1mtM8-1080.jpeg 1080w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/ISA7J1mtM8-200.jpeg" width="1080" height="1080"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/prllel/">Prllel</a> </p>
+
+          <p class="subtitle">
+          2017
+          
+          - current
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/wbOgbi7VE5-200.avif 200w, /img/wbOgbi7VE5-300.avif 300w, /img/wbOgbi7VE5-360.avif 360w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/wbOgbi7VE5-200.jpeg 200w, /img/wbOgbi7VE5-300.jpeg 300w, /img/wbOgbi7VE5-360.jpeg 360w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/wbOgbi7VE5-200.jpeg" width="360" height="360"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/environmental_monitor/">Environmental Monitor</a> </p>
+
+          <p class="subtitle">
+          2021
+          
+          - current
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/ky88NRQSTT-200.avif 200w, /img/ky88NRQSTT-300.avif 300w, /img/ky88NRQSTT-660.avif 660w, /img/ky88NRQSTT-800.avif 800w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/ky88NRQSTT-200.jpeg 200w, /img/ky88NRQSTT-300.jpeg 300w, /img/ky88NRQSTT-660.jpeg 660w, /img/ky88NRQSTT-800.jpeg 800w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/ky88NRQSTT-200.jpeg" width="800" height="800"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/flird/">Flird</a> </p>
+
+          <p class="subtitle">
+          2017
+          
+            - 2017
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/wRa8Pva4dM-200.avif 200w, /img/wRa8Pva4dM-300.avif 300w, /img/wRa8Pva4dM-512.avif 512w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/wRa8Pva4dM-200.jpeg 200w, /img/wRa8Pva4dM-300.jpeg 300w, /img/wRa8Pva4dM-512.jpeg 512w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/wRa8Pva4dM-200.jpeg" width="512" height="512"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/respiot/">Resp IoT</a> </p>
+
+          <p class="subtitle">
+          2020
+          
+            - 2021
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/vnwaPkKm8b-200.avif 200w, /img/vnwaPkKm8b-300.avif 300w, /img/vnwaPkKm8b-608.avif 608w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/vnwaPkKm8b-200.jpeg 200w, /img/vnwaPkKm8b-300.jpeg 300w, /img/vnwaPkKm8b-608.jpeg 608w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/vnwaPkKm8b-200.jpeg" width="608" height="608"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/calcul_ar/">Calcul-AR</a> </p>
+
+          <p class="subtitle">
+          2014
+          
+            - 2014
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/Ff1irW2DRD-200.avif 200w, /img/Ff1irW2DRD-300.avif 300w, /img/Ff1irW2DRD-321.avif 321w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/Ff1irW2DRD-200.jpeg 200w, /img/Ff1irW2DRD-300.jpeg 300w, /img/Ff1irW2DRD-321.jpeg 321w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/Ff1irW2DRD-200.jpeg" width="321" height="584"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/voz3d/">Voz 3D</a> </p>
+
+          <p class="subtitle">
+          2017
+          
+            - 2018
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/XibDbhG8oy-200.avif 200w, /img/XibDbhG8oy-300.avif 300w, /img/XibDbhG8oy-660.avif 660w, /img/XibDbhG8oy-830.avif 830w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/XibDbhG8oy-200.jpeg 200w, /img/XibDbhG8oy-300.jpeg 300w, /img/XibDbhG8oy-660.jpeg 660w, /img/XibDbhG8oy-830.jpeg 830w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/XibDbhG8oy-200.jpeg" width="830" height="830"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/waving_cubes/">Waving Cubes</a> </p>
+
+          <p class="subtitle">
+          2020
+          
+            - 2020
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/zJ-SPvx0VK-200.avif 200w, /img/zJ-SPvx0VK-300.avif 300w, /img/zJ-SPvx0VK-500.avif 500w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/zJ-SPvx0VK-200.jpeg 200w, /img/zJ-SPvx0VK-300.jpeg 300w, /img/zJ-SPvx0VK-500.jpeg 500w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/zJ-SPvx0VK-200.jpeg" width="500" height="500"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/bembar/">BembAR</a> </p>
+
+          <p class="subtitle">
+          2016
+          
+            - 2016
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          <picture><source type="image/avif" srcset="/img/RbJ2nuEnDM-200.avif 200w, /img/RbJ2nuEnDM-300.avif 300w, /img/RbJ2nuEnDM-406.avif 406w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/RbJ2nuEnDM-200.jpeg 200w, /img/RbJ2nuEnDM-300.jpeg 300w, /img/RbJ2nuEnDM-406.jpeg 406w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/RbJ2nuEnDM-200.jpeg" width="406" height="406"></picture>
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="/projects/ar_shoes/">ARShoes</a> </p>
+
+          <p class="subtitle">
+          2014
+          
+            - 2014
+          
+          </p>
+        </div>
+      </div>
+      
+      <div class="card-empty"></div>
+    </div>
+  </div>
 </div>
 
-	<script src="/assets/js/elements.js"></script>
-</body>
 
+
+	<footer class="footer">
+  <div class="footer-inner">
+    <div class="nav-items"><a href="/">Home</a>
+        
+          <span class="bull">&bull;</span>
+        <a href="/projects/">Projects</a>
+        
+          <span class="bull">&bull;</span>
+        <a href="/about/">About me</a>
+        </div>
+    <div class="network-items"><a class="network-iten"
+          href="https://github.com/anargu"
+          target="_blank"
+        >
+          <img src="/assets/github.svg" />
+        </a><a class="network-iten"
+          href="https://www.linkedin.com/in/anthonyarostegui/"
+          target="_blank"
+        >
+          <img src="/assets/linkedin.svg" />
+        </a><a class="network-iten"
+          href="https://twitter.com/anargu101"
+          target="_blank"
+        >
+          <img src="/assets/twitter.svg" />
+        </a><a class="network-iten"
+          href="https://www.instagram.com/anargu101/"
+          target="_blank"
+        >
+          <img src="/assets/instagram.svg" />
+        </a></div>
+  </div>
+</footer>
+
+
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</body>
 </html>
