@@ -1,64 +1,108 @@
-const fs = require('fs');
-const stylus = require('stylus');
-const path = require('path')
+const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
+const htmlmin = require('html-minifier');
 const yaml = require("js-yaml");
 const pluginDate = require('eleventy-plugin-date');
 const Image = require("@11ty/eleventy-img");
+const sortBy = require("lodash/sortBy");
+const { DateTime } = require("luxon");
 
+async function blockImage(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [100, 300, 660],
+    formats: ["avif", "jpeg"],
+    outputDir: "./_site/img/"
+  });
 
-function parseStylusFile(stylusData, filename) {
-	let paths = [
-		__dirname
-		, __dirname + '/stylus'
-	];
-	stylus(stylusData)
-		.set('paths', paths)
-		.set('filename', filename + '.css')
-		.render(function (err, data) {
-			if (err) throw err
-			fs.writeFileSync('./assets/' + filename + '.css', data)
+  let imageAttributes = {
+    alt,
+    sizes: sizes || "(min-width: 1024px) 200px, 150px",
+    loading: "lazy",
+    decoding: "async",
+  };
 
-		});
+  return `
+  <div class="block-image">
+    ${Image.generateHTML(metadata, imageAttributes, {
+      whitespaceMode: 'inline'
+    })}
+  </div>
+  `;
 }
 
-function watchStylus() {
-	dirStylus = './stylus/'
-	let files = fs.readdirSync(dirStylus)
-	// watching for styl changes
-	fs.watch(dirStylus, function (event, _) {
-		console.log('event is: ' + event);
-		files = fs.readdirSync(dirStylus)
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [200, 300, 660, null],
+    formats: ["avif", "jpeg"],
+    outputDir: "./_site/img/"
+  });
 
-		for (let i = 0; i < files.length; i++) {
-			let file = files[i];
-			const data = fs.readFileSync(path.join(dirStylus, file), {encoding: 'utf-8'})
-			const filename = path.basename(file).split('.')[0]
-			parseStylusFile(data, filename)
-		}
-	});
 
-	// initial css compilation
-	for (let i = 0; i < files.length; i++) {
-		let file = files[i];
-		const data = fs.readFileSync(path.join(dirStylus, file), {encoding: 'utf-8'})
-		const filename = path.basename(file).split('.')[0]
-		parseStylusFile(data, filename)
-	}
 
+  let imageAttributes = {
+    alt,
+    sizes: sizes || "(min-width: 1024px) 200px, 150px",
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
 }
 
-module.exports = function (eleventyConfig) {
-	try {
-		watchStylus()
+function video(src, alt) {
+  return `
+  <div class="video-container">
+    <figure>
+      <video controls="true" allowfullscreen="true" alt="${alt}">
+        <source src="${src}" type="video/mp4">
+      </video>
+    </figure>
+  </div>
+  `;
+}
 
-		eleventyConfig.setTemplateFormats([
-			"html",
-			"liquid",
-			"css",
-			"md"
-		]);
+function rawGIF(src, alt) {
+  let _src = src.replace('./src', '');
 
-		eleventyConfig.addPlugin(pluginDate,{
+  return `
+  <div class="image-container">
+    <img src="${_src}" alt="${alt}" />
+  </div>
+  `;
+}
+
+async function rawImage(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [null],
+    formats: ["jpeg"],
+    outputDir: "./_site/img/"
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes: sizes || "(min-width: 1024px) 200px, 150px",
+    loading: "lazy",
+    decoding: "async",
+  };
+
+
+  return `
+  <div class="image-container">
+    ${Image.generateHTML(metadata, imageAttributes)}
+  </div>
+  `;
+}
+
+module.exports = (config) => {
+
+    config.addWatchTarget('src/sass/');
+
+    config.setBrowserSyncConfig({
+      files: './_site/css/**/*.css'
+    });
+
+
+		config.addPlugin(pluginDate,{
 			formats: {
 				// Change the readableDate filter to use abbreviated months.
 				readableDate: { year: 'numeric', month: 'short', day: 'numeric' },
@@ -71,77 +115,116 @@ module.exports = function (eleventyConfig) {
 			}
 		});
 
-		eleventyConfig.addPassthroughCopy('*.svg')
-		
-		// eleventyConfig.addPassthroughCopy('*.css')
-		eleventyConfig.addPassthroughCopy('assets/')
-		eleventyConfig.addPassthroughCopy('projects/**/*.png')
-		eleventyConfig.addPassthroughCopy('projects/**/*.jpg')
-		eleventyConfig.addPassthroughCopy('projects/**/*.jpeg')
-		eleventyConfig.addPassthroughCopy('projects/**/*.mp4')
-		// eleventyConfig.addPassthroughCopy('*.js')
-		
-		eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
-		eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
+    // config.setNunjucksEnvironmentOptions({
+    //   throwOnUndefined: true,
+    //   autoescape: false, // warning: don’t do this!
+    // });
 
-    eleventyConfig.addLiquidFilter("reverse", (collection) => {
-        const arr = [...collection];
-        return arr.reverse();
+    // Needed to prevent eleventy from ignoring changes to generated
+    // templates since it is in our `.gitignore`
+    config.setUseGitIgnore(false);
+
+    // Pass-through files
+    config.addPassthroughCopy({ 'src/assets/public': '/' });
+    config.addPassthroughCopy({ 'src/scripts/utilities/sw.js': 'sw.js' });
+    config.addPassthroughCopy('src/assets');
+    config.addPassthroughCopy('src/assets/*.svg');
+    config.addPassthroughCopy('src/assets/files');
+    config.addPassthroughCopy('src/assets/images');
+		config.addPassthroughCopy('src/assets/js/*')
+		config.addPassthroughCopy('src/assets/favicons/*')
+
+		config.addPassthroughCopy('src/projects/**/*.png');
+		config.addPassthroughCopy('src/projects/**/*.jpg');
+		config.addPassthroughCopy('src/projects/**/*.jpeg');
+		config.addPassthroughCopy('src/projects/**/*.gif');
+		config.addPassthroughCopy('src/projects/**/*.mp4');
+
+    // // Markdown 
+    // config.setLibrary('md',
+    //     require('markdown-it')({
+    //       html: true
+    //     })
+    // );
+
+    // Strip HTML
+    config.addFilter('stripHtml', (content) => {
+        const strippedContent = content.replace(/(<([^>]+)>)/gi, "")
+                                       .replace(/\r?\n|\r/gi, " ")
+                                       .trim();
+        return strippedContent;
     });
 
-		eleventyConfig.addLiquidShortcode("Image", async function(src, alt) {
-			if (!alt) {
-				throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-			}
+    // Minify any files
+    // config.addPlugin(eleventyPluginFilesMinifier);
 
-			let stats = await Image(src, {
-				widths: [320, 640, 960, 1200, 1800, 2400],
-				formats: ["jpeg", "webp"],
-				urlPath: "/images/",
-				outputDir: "./_site/images/",
-			});
+    // // Minify HTML
+    // config.addTransform("htmlmin", function(content, outputPath) {
+    //     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+    //     if( outputPath.endsWith(".html") ) {
+    //         let minified = htmlmin.minify(content, {
+    //             useShortDoctype: true,
+    //             removeComments: true,
+    //             collapseWhitespace: true
+    //         });
+    //         return minified;
+    //     }
+    //
+    //     return content;
+    // });
+    config.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-			let lowestSrc = stats["jpeg"][0];
+		config.addDataExtension("yaml", contents => yaml.load(contents));
+		config.addDataExtension("yml", contents => yaml.load(contents));
 
-			const srcset = Object.keys(stats).reduce(
-				(acc, format) => ({
-					...acc,
-					[format]: stats[format].reduce(
-						(_acc, curr) => `${_acc} ${curr.srcset} ,`,
-						""
-					),
-				}),
-				{}
-			);
+    config.addNunjucksAsyncShortcode("Image", imageShortcode);
+    config.addNunjucksAsyncShortcode("BlockImage", blockImage);
+    config.addNunjucksShortcode("Video", video);
+    config.addNunjucksAsyncShortcode("RawImage", rawImage);
+    config.addNunjucksShortcode("RawGIF", rawGIF);
 
-			const source = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
+    config.addCollection("projectsByOrder", (collection) =>
+      sortBy(collection.getFilteredByGlob("src/projects/**/*.md"), [(o) => o.data.order])
+    );
 
-			const img = `<img
-				loading="lazy"
-				alt="${alt}"
-				src="${lowestSrc.url}"
-				sizes='(min-width: 1024px) 1024px, 100vw'
-				srcset="${srcset["jpeg"]}">`;
+    config.addCollection("projectsByEndDate", (collection) =>
+      sortBy(
+        collection.getFilteredByGlob("src/projects/**/*.md"),
+        [(o) => o.data.end_date ?? new Date().toISOString()]
+      )
+      // collection.getFilteredByGlob("src/projects/**/*.md").sort((a, b) => {
+      //   if (a.data.end_date > b.data.end_date) return -1;
+      //   else if (a.data.end_date < b.data.end_date) return 1;
+      //   else return 0;
+      // }
+    );
 
-			return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
-		});
-		
-		
-		// eleventyConfig.addCollection("posts", function (collection) {
-		//   // return collection.getFilteredByTags("post");
-		//   return collection.getFilteredByGlob("posts/*.md");
-		// });
-		// eleventyConfig.addCollection("projects2", function (collection) {
-		//   return collection.getFilteredByGlob("/_projects/**/*.yml");
-		// });
-		// eleventyConfig.addCollection("post", function (collection) {
-		//   return collection.getFilteredByGlob("/_projects/**/*.md");
-		// });
-	
-	} catch (error) {
-		console.error(error);
-	}
-	// return {
-	//   pathPrefix: '/_site/'
-	// }
-}
+    config.addFilter("hasTag", (tags, tag) => {
+      return (tags || []).includes(tag);
+    });
+
+    config.addFilter("dateFormat", (dateObj) => {
+      if (!dateObj) return null;
+      return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    });
+
+    config.addFilter("defaultPresent", (obj) => obj ?? 'Present');
+
+    config.addFilter("hasOnlyOneElement", (list) => {
+      return (list || []).length === 1;
+    });
+
+    config.addFilter("removeSrcFromPath", (obj) => obj.replace("./src", ""));
+
+    return {
+        dir: {
+            input: 'src',
+            output: '_site',
+            layouts: '_layouts',
+            includes: '_includes',
+        },
+        templateFormats: ['md', 'njk'],
+        htmlTemplateEngine: 'njk',
+        markdownTemplateEngine: "njk",
+    };
+};

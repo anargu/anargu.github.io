@@ -1,0 +1,50 @@
+---
+layout: base.njk
+pagination:
+  data: collections.projects
+  size: 10
+  reverse: true
+  filter:
+    - projects
+---
+<div class="projects-page page">
+  <div class="sidebar-menu">
+    <h1 class="section-title">Projects</h1>
+    <div class="projects-menu">
+      {% for post in collections.projectsByOrder %}
+      <div class="project-menu-item">
+        <a href="{{ post.url }}">
+          {{ post.data.title }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="projects" class="projects page-wrapper">
+    <div class="grid-projects">
+      {% for post in collections.projectsByOrder %}
+      <div class="project-card card">
+        <div class="portrait-image-container">
+          {% Image post.data.mini_portrait_image if post.data.mini_portrait_image
+          else post.data.portrait_image, "project image" %}
+        </div>
+        <div class="caption --right">
+          <p class="title"> <a href="{{ post.url }}">{{ post.data.title }}</a> </p>
+
+          <p class="subtitle">
+          {{ post.data.start_date | onlyYear }}
+          {% if post.data.end_date %}
+            - {{ post.data.end_date | onlyYear }}
+          {% else %}
+          - current
+          {% endif %}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="card-empty"></div>
+    </div>
+  </div>
+</div>
+

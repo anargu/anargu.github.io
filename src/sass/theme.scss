@@ -1,0 +1,23 @@
+$defaultFont: Playfair Display,Georgia, Cambria, "Times New Roman", Times, serif;
+$secondaryFont: sans-serif;
+
+$black: #000000;
+$white: #f7f7f7;
+$dark: #121212;
+$light: rgba(255,255,255,0.7);
+$cardCaptionBackgroundColor: #42429994;
+
+$navbarBackgroundLightColor: #FFFFFFC7;
+$navbarBackgroundDarkColor: #000000c7;
+
+@mixin onDarkTheme {
+  body[data-theme="dark"] {
+    @content;
+  }
+}
+
+@mixin onLightTheme {
+  body[data-theme="light"] {
+    @content;
+  }
+}

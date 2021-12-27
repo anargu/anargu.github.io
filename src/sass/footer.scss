@@ -1,0 +1,48 @@
+.footer {
+  background: $dark;
+  color: $light;
+  /* padding: 4rem 0; */
+  text-align: center;
+  position: relative;
+  z-index: 10;
+
+  height: $footerHeight;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  a,
+  a:visited {
+    color: $light;
+
+    font-size: 1rem;
+
+    font-family: $secondaryFont;
+    text-transform: uppercase;
+    // make space between dots
+
+    @include lg {
+      /* font-size: 1.5rem; */
+      font-size: 1.3rem;
+    }
+  }
+
+  .bull {
+    /* margin: 0 0.25rem; */
+    margin: 0 1rem;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .network-items {
+    a {
+      padding: 0 0.5rem;
+    }
+  }
+}
+

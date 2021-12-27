@@ -1,0 +1,11 @@
+- url: '/'
+  title: 'Home'
+  home: true
+  position: top-left
+- url: '/projects/'
+  title: 'Projects'
+  position: top-left
+- url: '/about/'
+  title: 'About me'
+  position: top-left
+

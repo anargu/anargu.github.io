@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.njk' %}
+
+<body data-theme="{{ site.mode }}">
+  {% include 'navbar.njk' %} 
+
+  {{ content | safe }}
+
+	{% include 'footer.njk' %}
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</body>
+</html>
