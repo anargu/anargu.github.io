@@ -115,7 +115,6 @@
   <!--
 	<link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'; this.onload=null;">
   -->
-	
 </head>
 
 
@@ -237,7 +236,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   <div class="portrait">
   
-    <picture><source type="image/avif" srcset="/img/wRa8Pva4dM-100.avif 100w, /img/wRa8Pva4dM-300.avif 300w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/wRa8Pva4dM-100.jpeg 100w, /img/wRa8Pva4dM-300.jpeg 300w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/wRa8Pva4dM-100.jpeg" width="300" height="300"></picture>
+    <picture><source type="image/avif" srcset="/img/wRa8Pva4dM-200.avif 200w, /img/wRa8Pva4dM-300.avif 300w, /img/wRa8Pva4dM-512.avif 512w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><source type="image/jpeg" srcset="/img/wRa8Pva4dM-200.jpeg 200w, /img/wRa8Pva4dM-300.jpeg 300w, /img/wRa8Pva4dM-512.jpeg 512w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><img alt="project image" loading="lazy" decoding="async" src="/img/wRa8Pva4dM-200.jpeg" width="512" height="512"></picture>
   
 </div>
 
@@ -284,18 +283,71 @@ communication between the web platform and the hardware.</p>
 
 
   
-    <div class="grid-image-gallery ">
+    <div class="grid" data-masonry='{ 
+      "itemSelector": ".grid-item",
+      "gutter": 8
+     }'>
       
-          <picture><source type="image/avif" srcset="/img/Y6scSOT7wk-100.avif 100w, /img/Y6scSOT7wk-300.avif 300w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/Y6scSOT7wk-100.jpeg 100w, /img/Y6scSOT7wk-300.jpeg 300w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/Y6scSOT7wk-100.jpeg" width="300" height="649"></picture>
+        <div class="grid-item">
+          <a href="/projects/respiot/photo_2021-01-09 11.35.34.jpeg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/Y6scSOT7wk-591.jpeg" width="591" height="1280">
+  </div>
+  
+          </a>
+        </div>
       
-          <picture><source type="image/avif" srcset="/img/qiK32yvxls-100.avif 100w, /img/qiK32yvxls-300.avif 300w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/qiK32yvxls-100.jpeg 100w, /img/qiK32yvxls-300.jpeg 300w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/qiK32yvxls-100.jpeg" width="300" height="649"></picture>
+        <div class="grid-item">
+          <a href="/projects/respiot/2021-01-09 11.37.11.jpg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/qiK32yvxls-591.jpeg" width="591" height="1280">
+  </div>
+  
+          </a>
+        </div>
       
-          <picture><source type="image/avif" srcset="/img/V7wBxEbcqm-100.avif 100w, /img/V7wBxEbcqm-300.avif 300w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/V7wBxEbcqm-100.jpeg 100w, /img/V7wBxEbcqm-300.jpeg 300w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/V7wBxEbcqm-100.jpeg" width="300" height="649"></picture>
+        <div class="grid-item">
+          <a href="/projects/respiot/2021-01-09 11.37.40.jpg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/V7wBxEbcqm-591.jpeg" width="591" height="1280">
+  </div>
+  
+          </a>
+        </div>
       
-          <picture><source type="image/avif" srcset="/img/b-lOnfcA-e-100.avif 100w, /img/b-lOnfcA-e-300.avif 300w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/b-lOnfcA-e-100.jpeg 100w, /img/b-lOnfcA-e-300.jpeg 300w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/b-lOnfcA-e-100.jpeg" width="300" height="649"></picture>
+        <div class="grid-item">
+          <a href="/projects/respiot/2021-01-09 11.37.50.jpg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/b-lOnfcA-e-591.jpeg" width="591" height="1280">
+  </div>
+  
+          </a>
+        </div>
       
     </div>
   
+
+  <!--
+  <div class="grid-image-gallery ">
+    
+        <img src="./src/projects/respiot/photo_2021-01-09 11.35.34.jpeg" alt="">
+        <picture><source type="image/avif" srcset="/img/Y6scSOT7wk-200.avif 200w, /img/Y6scSOT7wk-300.avif 300w, /img/Y6scSOT7wk-591.avif 591w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/Y6scSOT7wk-200.jpeg 200w, /img/Y6scSOT7wk-300.jpeg 300w, /img/Y6scSOT7wk-591.jpeg 591w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/Y6scSOT7wk-200.jpeg" width="591" height="1280"></picture>
+    
+        <img src="./src/projects/respiot/2021-01-09 11.37.11.jpg" alt="">
+        <picture><source type="image/avif" srcset="/img/qiK32yvxls-200.avif 200w, /img/qiK32yvxls-300.avif 300w, /img/qiK32yvxls-591.avif 591w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/qiK32yvxls-200.jpeg 200w, /img/qiK32yvxls-300.jpeg 300w, /img/qiK32yvxls-591.jpeg 591w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/qiK32yvxls-200.jpeg" width="591" height="1280"></picture>
+    
+        <img src="./src/projects/respiot/2021-01-09 11.37.40.jpg" alt="">
+        <picture><source type="image/avif" srcset="/img/V7wBxEbcqm-200.avif 200w, /img/V7wBxEbcqm-300.avif 300w, /img/V7wBxEbcqm-591.avif 591w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/V7wBxEbcqm-200.jpeg 200w, /img/V7wBxEbcqm-300.jpeg 300w, /img/V7wBxEbcqm-591.jpeg 591w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/V7wBxEbcqm-200.jpeg" width="591" height="1280"></picture>
+    
+        <img src="./src/projects/respiot/2021-01-09 11.37.50.jpg" alt="">
+        <picture><source type="image/avif" srcset="/img/b-lOnfcA-e-200.avif 200w, /img/b-lOnfcA-e-300.avif 300w, /img/b-lOnfcA-e-591.avif 591w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/b-lOnfcA-e-200.jpeg 200w, /img/b-lOnfcA-e-300.jpeg 300w, /img/b-lOnfcA-e-591.jpeg 591w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/b-lOnfcA-e-200.jpeg" width="591" height="1280"></picture>
+    
+  </div>
+  -->
 </div>
 
 

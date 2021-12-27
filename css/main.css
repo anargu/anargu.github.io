@@ -114,6 +114,8 @@ body[data-theme=light] .page a:visited {
 .portrait {
   /* background: $dark; */
   text-align: center;
+  max-width: 660px;
+  margin: 0 auto;
 }
 .portrait video {
   width: 100%;
@@ -126,6 +128,8 @@ body[data-theme=light] .page a:visited {
 .portrait img {
   vertical-align: bottom;
   border-radius: 1rem;
+  width: calc(100% - 8px);
+  height: auto;
 }
 
 .block-image {
@@ -147,7 +151,12 @@ body[data-theme=light] .page a:visited {
 .video-container video,
 .video-container img {
   width: 100%;
+  height: 100%;
   border-radius: 1rem;
+}
+.image-container video,
+.video-container video {
+  max-height: 400px;
 }
 
 .background-decorator {
@@ -176,6 +185,12 @@ body[data-theme=light] .page a:visited {
 }
 .grid-image-gallery.only-one img {
   width: auto;
+}
+
+.grid-item {
+  display: inline-block;
+  width: calc(50% - 4px);
+  margin: 0 0 8px 0;
 }
 
 .projects-page {
@@ -226,6 +241,7 @@ body[data-theme=light] .page a:visited {
   width: 100%;
   margin: 0 0 1rem 0;
   break-inside: avoid;
+  display: inline-block;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 1rem;
 }

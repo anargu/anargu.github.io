@@ -115,7 +115,6 @@
   <!--
 	<link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'; this.onload=null;">
   -->
-	
 </head>
 
 
@@ -237,7 +236,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   <div class="portrait">
   
-    <picture><source type="image/avif" srcset="/img/yjsRYDeXPg-100.avif 100w, /img/yjsRYDeXPg-300.avif 300w, /img/yjsRYDeXPg-660.avif 660w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/yjsRYDeXPg-100.jpeg 100w, /img/yjsRYDeXPg-300.jpeg 300w, /img/yjsRYDeXPg-660.jpeg 660w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/yjsRYDeXPg-100.jpeg" width="660" height="660"></picture>
+    <picture><source type="image/avif" srcset="/img/sJvF8AdHBW-200.avif 200w, /img/sJvF8AdHBW-300.avif 300w, /img/sJvF8AdHBW-660.avif 660w, /img/sJvF8AdHBW-3000.avif 3000w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><source type="image/jpeg" srcset="/img/sJvF8AdHBW-200.jpeg 200w, /img/sJvF8AdHBW-300.jpeg 300w, /img/sJvF8AdHBW-660.jpeg 660w, /img/sJvF8AdHBW-3000.jpeg 3000w" sizes="660px, (max-width: 800px) 300px, (max-width: 300px) 200px"><img alt="project image" loading="lazy" decoding="async" src="/img/sJvF8AdHBW-200.jpeg" width="3000" height="1000"></picture>
   
 </div>
 
@@ -264,7 +263,13 @@ order to interact the virtual information with the real objects; however, it is
 not yet accessible for everyone because of the elevated prices it cost to obtain
 a device like that.
 To tackle this, Prllel is a proposal that bets the use of Artificial Intelligence models to close the gap of accessibility while maintaining a decently immersive experience.</p>
-<hr/>
+  <div class="video-container">
+    <figure>
+      <video controls="true" allowfullscreen="true" alt="project video">
+        <source src="/projects/prllel/demo.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </div>
 <h2>Technical challenges</h2>
 <p>This project is currently in progress. Besides the challenges of building an
 entire social platform that goes from frontend to backend, the real challenge
@@ -281,12 +286,58 @@ that could learn our environment.</p>
 
 
   
-    <div class="grid-image-gallery only-one">
+    <div class="grid" data-masonry='{ 
+      "itemSelector": ".grid-item",
+      "gutter": 8
+     }'>
       
-          <picture><source type="image/avif" srcset="/img/cH41iTixAu-100.avif 100w, /img/cH41iTixAu-300.avif 300w, /img/cH41iTixAu-660.avif 660w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/cH41iTixAu-100.jpeg 100w, /img/cH41iTixAu-300.jpeg 300w, /img/cH41iTixAu-660.jpeg 660w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/cH41iTixAu-100.jpeg" width="660" height="376"></picture>
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_2_auto_x2_colored_toned.jpg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/AWc-nYe6NM-2160.jpeg" width="2160" height="1232">
+  </div>
+  
+          </a>
+        </div>
+      
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_4.jpeg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/yjsRYDeXPg-720.jpeg" width="720" height="720">
+  </div>
+  
+          </a>
+        </div>
+      
+        <div class="grid-item">
+          <a href="/projects/prllel/demo_5.jpeg" target="_blank">
+            
+  <div class="image-container">
+    <img alt="project image" loading="lazy" decoding="async" src="/img/lAZlLZRl2W-1080.jpeg" width="1080" height="1350">
+  </div>
+  
+          </a>
+        </div>
       
     </div>
   
+
+  <!--
+  <div class="grid-image-gallery ">
+    
+        <img src="./src/projects/prllel/demo_2_auto_x2_colored_toned.jpg" alt="">
+        <picture><source type="image/avif" srcset="/img/AWc-nYe6NM-200.avif 200w, /img/AWc-nYe6NM-300.avif 300w, /img/AWc-nYe6NM-660.avif 660w, /img/AWc-nYe6NM-2160.avif 2160w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/AWc-nYe6NM-200.jpeg 200w, /img/AWc-nYe6NM-300.jpeg 300w, /img/AWc-nYe6NM-660.jpeg 660w, /img/AWc-nYe6NM-2160.jpeg 2160w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/AWc-nYe6NM-200.jpeg" width="2160" height="1232"></picture>
+    
+        <img src="./src/projects/prllel/demo_4.jpeg" alt="">
+        <picture><source type="image/avif" srcset="/img/yjsRYDeXPg-200.avif 200w, /img/yjsRYDeXPg-300.avif 300w, /img/yjsRYDeXPg-660.avif 660w, /img/yjsRYDeXPg-720.avif 720w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/yjsRYDeXPg-200.jpeg 200w, /img/yjsRYDeXPg-300.jpeg 300w, /img/yjsRYDeXPg-660.jpeg 660w, /img/yjsRYDeXPg-720.jpeg 720w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/yjsRYDeXPg-200.jpeg" width="720" height="720"></picture>
+    
+        <img src="./src/projects/prllel/demo_5.jpeg" alt="">
+        <picture><source type="image/avif" srcset="/img/lAZlLZRl2W-200.avif 200w, /img/lAZlLZRl2W-300.avif 300w, /img/lAZlLZRl2W-660.avif 660w, /img/lAZlLZRl2W-1080.avif 1080w" sizes="(min-width: 1024px) 200px, 150px"><source type="image/jpeg" srcset="/img/lAZlLZRl2W-200.jpeg 200w, /img/lAZlLZRl2W-300.jpeg 300w, /img/lAZlLZRl2W-660.jpeg 660w, /img/lAZlLZRl2W-1080.jpeg 1080w" sizes="(min-width: 1024px) 200px, 150px"><img alt="project image" loading="lazy" decoding="async" src="/img/lAZlLZRl2W-200.jpeg" width="1080" height="1350"></picture>
+    
+  </div>
+  -->
 </div>
 
 
