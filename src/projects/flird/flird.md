@@ -9,6 +9,7 @@ tags: [ projects ]
 description: "Flird: AR Experience."
 video: /projects/flird/flird_demo.mp4	
 portrait_image: ./src/projects/flird/flird_2.jpg	
+mini_portrait_image: ./src/projects/flird/flird_birds.jpeg
 ---
 
 

@@ -9,8 +9,12 @@ tags:
 	- projects
 portrait_image: ./src/projects/environmental_monitor/monitormedioambiente_360.png
 description: Description Project
-#images:
-#  - ./src/projects/environmental_monitor/monitormedioambiente_360.png
+images:
+  - ./src/projects/environmental_monitor/raw_806623251_221538.jpeg
+  - ./src/projects/environmental_monitor/raw_107740366_6066.jpeg
+  - ./src/projects/environmental_monitor/107734086_11580.jpeg
+  - ./src/projects/environmental_monitor/raw_107736776_10914.jpeg
+  - ./src/projects/environmental_monitor/raw_806621542_224491.jpeg
 ---
 
  

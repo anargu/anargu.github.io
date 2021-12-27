@@ -8,10 +8,13 @@ start_date: 2017-01-01 00:00:00 -05:00
 tags:
   - projects
 description: "Prllel: Augmented Reality Social Platform for sharing stories in real places."
-portrait_image: ./src/projects/prllel/demo_4.jpeg
-video: ./src/projects/prllel/demo.mp4
+portrait_image: ./src/projects/prllel/1500x500_auto_x2_colored_toned.jpg
+mini_portrait_image: ./src/projects/prllel/demo_3.jpeg
+video: /projects/prllel/demo.mp4
 images:
-  - ./src/projects/prllel/demo_2.jpg
+  - ./src/projects/prllel/demo_2_auto_x2_colored_toned.jpg
+  - ./src/projects/prllel/demo_4.jpeg
+  - ./src/projects/prllel/demo_5.jpeg
 ---
 
 [Prllel](https://prllel.co) is an Augmented Reality (AR) social platform that empowers its users to create their own content in AR and place it on the real world.
@@ -25,7 +28,8 @@ not yet accessible for everyone because of the elevated prices it cost to obtain
 a device like that.
 To tackle this, Prllel is a proposal that bets the use of Artificial Intelligence models to close the gap of accessibility while maintaining a decently immersive experience.
 
-<hr/>
+{% Video video, "project video" %}
+
 
 ## Technical challenges
 

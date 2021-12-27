@@ -31,7 +31,7 @@ async function blockImage(src, alt, sizes) {
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
-    widths: [100, 300, 660],
+    widths: [200, 300, 660, null],
     formats: ["avif", "jpeg"],
     outputDir: "./_site/img/"
   });
@@ -61,10 +61,34 @@ function video(src, alt) {
   `;
 }
 
-function rawImage(src, alt) {
+function rawGIF(src, alt) {
+  let _src = src.replace('./src', '');
+
   return `
   <div class="image-container">
-    <img src="${src}" alt="${alt}" />
+    <img src="${_src}" alt="${alt}" />
+  </div>
+  `;
+}
+
+async function rawImage(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [null],
+    formats: ["jpeg"],
+    outputDir: "./_site/img/"
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes: sizes || "(min-width: 1024px) 200px, 150px",
+    loading: "lazy",
+    decoding: "async",
+  };
+
+
+  return `
+  <div class="image-container">
+    ${Image.generateHTML(metadata, imageAttributes)}
   </div>
   `;
 }
@@ -156,7 +180,8 @@ module.exports = (config) => {
     config.addNunjucksAsyncShortcode("Image", imageShortcode);
     config.addNunjucksAsyncShortcode("BlockImage", blockImage);
     config.addNunjucksShortcode("Video", video);
-    config.addNunjucksShortcode("RawImage", rawImage);
+    config.addNunjucksAsyncShortcode("RawImage", rawImage);
+    config.addNunjucksShortcode("RawGIF", rawGIF);
 
     config.addCollection("projectsByOrder", (collection) =>
       sortBy(collection.getFilteredByGlob("src/projects/**/*.md"), [(o) => o.data.order])
@@ -188,6 +213,8 @@ module.exports = (config) => {
     config.addFilter("hasOnlyOneElement", (list) => {
       return (list || []).length === 1;
     });
+
+    config.addFilter("removeSrcFromPath", (obj) => obj.replace("./src", ""));
 
     return {
         dir: {

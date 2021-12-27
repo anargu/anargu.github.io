@@ -8,7 +8,7 @@ end_date: 2020-10-02 09:45:47 -05:00
 tags: [ projects ]
 description: "Waving cubes"
 portrait_image: ./src/projects/waving_cubes/waving_cubes_screenshot.png	
-portrait_gif: /projects/waving_cubes/waving_cubes.gif	
+portrait_gif: ./src/projects/waving_cubes/waving_cubes.gif	
 page_url: https://waving-cubes.glitch.me
 ---
 
@@ -17,7 +17,7 @@ page_url: https://waving-cubes.glitch.me
 [Waving Cubes]({{ page_url }}) is just a manifestation that I have some free time to do 
 some creative coding ;). I enjoy doing these sketches in my free time when I want to code something different than huge frontend or backend software projects. It relaxes me sometimes. 
 
-{% RawImage portrait_gif, "project gif" %}
+{% RawGIF portrait_gif, "project gif" %}
 
 ## Tech Details
 

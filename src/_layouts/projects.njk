@@ -26,7 +26,8 @@ pagination:
       {% for post in collections.projectsByOrder %}
       <div class="project-card card">
         <div class="portrait-image-container">
-          {% Image post.data.portrait_image, "project image" %}
+          {% Image post.data.mini_portrait_image if post.data.mini_portrait_image
+          else post.data.portrait_image, "project image" %}
         </div>
         <div class="caption --right">
           <p class="title"> <a href="{{ post.url }}">{{ post.data.title }}</a> </p>
