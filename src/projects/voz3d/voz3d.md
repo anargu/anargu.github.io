@@ -8,12 +8,12 @@ end_date: 2018-10-02 09:45:47 -05:00
 tags: [ projects ]
 description: "Voz 3D: Plataforma para el aprendizaje del lenguaje de señas a través de animaciones 3D"
 portrait_image: ./src/projects/voz3d/screenshot_1.png	
-page_url: https://voz3d.com/demo.html#/
+page_url: https://anargu.github.io/voz3d/
 #images:
 #	- ./src/projects/voz3d/screenshot_1.png	
 ---
 
-[Voz 3D](https://voz3d.com/demo.html#/) is a platform that works like a dictionary 
+[Voz 3D](https://anargu.github.io/voz3d/) is a platform that works like a dictionary 
 in which you search words or build a sentence, and you can learn the gestures 
 for sign language by a 3D avatar playing the animation.
 
